@@ -1,0 +1,6 @@
+@font-face {
+    font-family: "Aktifo";
+    font-style: normal;
+    src: local("Aktifo") url("../../public/fonts/Aktifo-A Book.woff2") format('woff2');
+    display: swap;
+}
