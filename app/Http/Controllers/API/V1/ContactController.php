@@ -17,6 +17,7 @@ class ContactController extends Controller
     {
         request()->validate([
             'name' => 'required',
+<<<<<<< HEAD
             'email' => 'required|email:rfc,dns',
             'phone' => 'required|max:15',
             'message' => 'required',
@@ -27,12 +28,21 @@ class ContactController extends Controller
             'email.email' => 'Please specify a real email',
             'phone.required' => 'Phone Number is required.',
             'message.required' => 'Please enter your message.',
+=======
+            'email' => 'required',
+            'phone' => 'required',
+            'message' => 'required',
+>>>>>>> 81eb85593c529cabed054551908bc47894094ded
         ]);
 
         return Contact::create([
             'name' => request('name'),
             'email' => request('email'),
+<<<<<<< HEAD
             'phone' => request('phone'),
+=======
+            'phone' => request('phone'),            
+>>>>>>> 81eb85593c529cabed054551908bc47894094ded
             'message' => request('message'),                
         ]);
     }
