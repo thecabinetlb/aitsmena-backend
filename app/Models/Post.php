@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\Category;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -16,10 +17,11 @@ class Post extends Model
 
     protected $fillable = [
         'title',
+        'author',
         'slug',
         'summary',
         'tags',
-        'image',
+        'thumbnail',
         'body',
         'published_at',
         'isFeatured',
@@ -36,7 +38,7 @@ class Post extends Model
         return $this->belongsToMany(Category::class);
     }
 
-    public function scopePublished($query)
+    public function scopeTimePublished($query)
     {
         $query->where('published_at', '<=', Carbon::now());
     }

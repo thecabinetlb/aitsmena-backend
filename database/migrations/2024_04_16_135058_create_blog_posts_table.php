@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blog_posts', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('thumbnail_image')->nullable();
+            $table->string('thumbnail')->nullable();
             $table->string('title');
+            $table->string('author');
             $table->string('slug')->unique();
             $table->text('summary');
             $table->text('body');
-            $table->json('tags').nullable();
+            $table->json('tags')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->boolean('isPublished')->default(false);
             $table->boolean('isFeatured')->default(false);
