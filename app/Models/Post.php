@@ -6,14 +6,12 @@ use App\Models\Category;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class Post extends Model
 {
     use HasFactory;
-    use SoftDeletes;
 
     protected $fillable = [
         'title',
@@ -25,7 +23,7 @@ class Post extends Model
         'body',
         'published_at',
         'is_featured',
-        'is_Arabic',
+        'is_arabic',
     ];
 
     protected $casts = [
@@ -50,7 +48,6 @@ class Post extends Model
         });
     }
 
-
     public function scopeFeatured($query)
     {
         $query->where('is_featured', true);
@@ -58,7 +55,7 @@ class Post extends Model
 
     public function scopeArabic($query)
     {
-        $query->where('is_Arabic', true);
+        $query->where('is_arabic', true);
     }
 
     public function scopeSearch($query, string $search = '')

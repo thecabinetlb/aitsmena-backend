@@ -42,7 +42,7 @@ class ContactResource extends Resource
                 //
             ])
             ->actions([
-                //
+                Tables\Actions\DeleteAction::make()
             ])
             ->bulkActions([
                 //

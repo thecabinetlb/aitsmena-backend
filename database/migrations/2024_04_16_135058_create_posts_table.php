@@ -22,7 +22,7 @@ return new class extends Migration
             $table->json('tags')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->boolean('is_featured')->default(false);
-            $table->boolean('is_Arabic')->default(false);
+            $table->boolean('is_arabic')->default(false);
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('blog_posts');
+        Schema::dropIfExists('posts');
     }
 };

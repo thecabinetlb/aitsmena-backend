@@ -91,7 +91,7 @@ class PostResource extends Resource
                     'max:255',
                 ]),
                 Toggle::make('is_featured')->inline(),
-                Toggle::make('is_Arabic')->inline()
+                Toggle::make('is_arabic')->inline()
             ]);
     }
 
@@ -105,7 +105,7 @@ class PostResource extends Resource
                 TextColumn::make('categories.title')->badge()->sortable()->searchable(),
                 TextColumn::make('published_at')->date('M-d-Y')->sortable()->searchable(),
                 ToggleColumn::make('is_featured'),
-                ToggleColumn::make('is_Arabic'),
+                ToggleColumn::make('is_arabic'),
                 TextColumn::make('created_at')
                 ->dateTime('M-d-Y')
                 ->sortable()
