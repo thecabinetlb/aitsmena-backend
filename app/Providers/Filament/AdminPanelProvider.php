@@ -36,7 +36,7 @@ class AdminPanelProvider extends PanelProvider
                 url: asset('css/fonts.css'),
                 provider: LocalFontProvider::class,
             )
-            ->favicon(asset('images/favicon.png'))
+            ->favicon(asset('images/favicon.svg'))
             ->brandLogo(asset('images/logo-light.webp'))
             ->darkModeBrandLogo(asset('images/logo-dark.webp'))
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')

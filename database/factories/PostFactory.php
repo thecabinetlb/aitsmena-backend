@@ -24,9 +24,8 @@ class PostFactory extends Factory
             'summary' => $this->faker->paragraph(5),
             'body' => $this->faker->paragraph(10),
             'published_at' => $this->faker->dateTimeBetween('-1 Week', '+1 week'),
-            'isArabic' => $this->faker->boolean(10),
-            'isPublished' => $this->faker->boolean(10),
-            'isFeatured' => $this->faker->boolean(10)
+            'is_Arabic' => $this->faker->boolean(10),
+            'is_featured' => $this->faker->boolean(10)
         ];
     }
 }

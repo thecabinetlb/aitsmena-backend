@@ -13,17 +13,30 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
+use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\TextColumn;
+use Illuminate\Support\Str;
+
 class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-tag';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                TextInput::make('title')
+                ->live()
+                ->required()->minLength(1)->maxLength(50)
+                ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+                    if ($operation === 'edit') {
+                        return;
+                    }
+                    $set('slug', Str::slug($state));
+                }),
+            TextInput::make('slug')->required()->minLength(1)->unique(ignoreRecord: true)->maxLength(50),
             ]);
     }
 
@@ -31,13 +44,30 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextInput::make('title')
+                ->live(onBlur:true)
+                ->unique()
+                ->required()->minLength(1)->maxLength(50)
+                ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+                    if ($operation === 'edit') {
+                        return;
+                    }
+                    $set('slug', Str::slug($state));              
+                }),
+                TextInput::make('slug')->unique()->required()->minLength(1)->maxLength(50),
+                TextColumn::make('created_at')
+                ->dateTime('M-d-Y')
+                ->sortable()
+                ->searchable(),
+                TextColumn::make('updated_at')
+                ->dateTime('M-d-Y'),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

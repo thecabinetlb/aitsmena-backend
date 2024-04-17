@@ -24,12 +24,12 @@ class Post extends Model
         'thumbnail',
         'body',
         'published_at',
-        'isFeatured',
-        'isPublished',
-        'isArabic',
+        'is_featured',
+        'is_Arabic',
     ];
 
     protected $casts = [
+        'tags' => 'array',
         'published_at' => 'datetime',
     ];
 
@@ -53,17 +53,12 @@ class Post extends Model
 
     public function scopeFeatured($query)
     {
-        $query->where('isFeatured', true);
+        $query->where('is_featured', true);
     }
 
     public function scopeArabic($query)
     {
-        $query->where('isArabic', true);
-    }
-
-    public function scopePublished($query)
-    {
-        $query->where('isPublished', true);
+        $query->where('is_Arabic', true);
     }
 
     public function scopeSearch($query, string $search = '')

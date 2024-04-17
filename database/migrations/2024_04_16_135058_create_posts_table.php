@@ -21,10 +21,8 @@ return new class extends Migration
             $table->text('body');
             $table->json('tags')->nullable();
             $table->timestamp('published_at')->nullable();
-            $table->boolean('isPublished')->default(false);
-            $table->boolean('isFeatured')->default(false);
-            $table->boolean('isArabic')->default(false);
-            $table->softDeletes();
+            $table->boolean('is_featured')->default(false);
+            $table->boolean('is_Arabic')->default(false);
             $table->timestamps();
         });
     }
