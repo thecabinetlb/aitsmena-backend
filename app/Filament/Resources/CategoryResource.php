@@ -46,7 +46,7 @@ class CategoryResource extends Resource
             ->columns([
                 TextInput::make('title')
                 ->live(onBlur:true)
-                ->unique()
+                ->unique(ignoreRecord: true)
                 ->required()->minLength(1)->maxLength(50)
                 ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
                     if ($operation === 'edit') {
@@ -54,7 +54,7 @@ class CategoryResource extends Resource
                     }
                     $set('slug', Str::slug($state));              
                 }),
-                TextInput::make('slug')->unique()->required()->minLength(1)->maxLength(50),
+                TextInput::make('slug')->->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(50),
                 TextColumn::make('created_at')
                 ->dateTime('M-d-Y')
                 ->sortable()

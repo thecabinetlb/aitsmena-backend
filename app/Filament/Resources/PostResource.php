@@ -39,12 +39,15 @@ class PostResource extends Resource
             ->schema([
                 TextInput::make('title')
                 ->live(onBlur:true)
-                ->unique()
+                ->unique(ignoreRecord: true)
                 ->required()->minLength(1)->maxLength(150)
                 ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+                    if ($operation === 'edit') {
+                        return;
+                    }                    
                     $set('slug', Str::slug($state));
                 }),
-                TextInput::make('slug')->unique()->required()->minLength(1)->maxLength(150),
+                TextInput::make('slug')->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(150),
                 TextInput::make('author')->required(),
                 TextArea::make('summary')
                 ->rows(5)
