@@ -11,7 +11,6 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\TextColumn;
@@ -44,23 +43,14 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                TextInput::make('title')
-                ->live(onBlur:true)
-                ->unique(ignoreRecord: true)
-                ->required()->minLength(1)->maxLength(50)
-                ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-                    if ($operation === 'edit') {
-                        return;
-                    }
-                    $set('slug', Str::slug($state));              
-                }),
-                TextInput::make('slug')->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(50),
+                TextColumn::make('title')->sortable()->searchable(),
+                TextColumn::make('slug')->sortable(),
                 TextColumn::make('created_at')
                 ->dateTime('M-d-Y')
                 ->sortable()
                 ->searchable(),
                 TextColumn::make('updated_at')
-                ->dateTime('M-d-Y'),
+                ->dateTime('M-d-Y')
             ])
             ->filters([
                 //
