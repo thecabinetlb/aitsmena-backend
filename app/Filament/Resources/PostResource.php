@@ -75,7 +75,8 @@ class PostResource extends Resource
                 ])
                 ->fileAttachmentsDirectory('posts/images')
                 ->required(),
-                DateTimePicker::make('published_at')->nullable(),
+                DateTimePicker::make('published_at')
+                    ->default(now()),
                 CheckboxList::make('categories')
                 ->relationship('categories', 'title')
                 ->required(),
@@ -99,13 +100,14 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('thumbnail'),
+                ImageColumn::make('thumbnail')
+                ->defaultImageUrl(url('/images/logo-light.webp')),
                 TextColumn::make('title')->sortable()->searchable(),
                 TextColumn::make('slug')->sortable(),
                 TextColumn::make('categories.title')->badge()->sortable()->searchable(),
                 TextColumn::make('published_at')->date('M-d-Y')->sortable()->searchable(),
-                ToggleColumn::make('is_featured'),
-                ToggleColumn::make('is_arabic'),
+                ToggleColumn::make('is_featured')->label('Featured'),
+                ToggleColumn::make('is_arabic')->label('In Arabic'),
                 TextColumn::make('created_at')
                 ->dateTime('M-d-Y')
                 ->sortable()
