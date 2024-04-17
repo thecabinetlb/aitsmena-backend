@@ -36,7 +36,7 @@ class CategoryResource extends Resource
                     }
                     $set('slug', Str::slug($state));
                 }),
-            TextInput::make('slug')->required()->minLength(1)->unique(ignoreRecord: true)->maxLength(50),
+            TextInput::make('slug')->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(50),
             ]);
     }
 
@@ -54,7 +54,7 @@ class CategoryResource extends Resource
                     }
                     $set('slug', Str::slug($state));              
                 }),
-                TextInput::make('slug')->->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(50),
+                TextInput::make('slug')->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(50),
                 TextColumn::make('created_at')
                 ->dateTime('M-d-Y')
                 ->sortable()
