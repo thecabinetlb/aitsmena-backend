@@ -20,7 +20,7 @@ class ContactController extends Controller
             'name' => 'required',
             'email' => 'required|email:rfc,dns',
             'company_name' => 'required',
-            'phone' => 'required|max:15',
+            'phone' => 'required|numeric|digits_between:8,15', // Numeric and between 8 and 15 digits
             'subject' => ['required', Rule::in(['General Inquiries', 'Sales and Support'])],
             'message' => 'required',
         ],
@@ -29,7 +29,8 @@ class ContactController extends Controller
             'email.required' => 'Email is required',
             'email.email' => 'Please specify a real email',
             'company_name.required' => 'Company Name is required.',
-            'phone.required' => 'Phone Number is required.',
+            'phone.numeric' => 'Phone Number must contain only digits.',
+            'phone.digits_between' => 'Phone Number must be between :min and :max digits long.',
             'subject.required' => 'Subject is required.',
             'subject.in' => 'Invalid subject. Please select either General Inquiries or Sales and Support.',
             'message.required' => 'Please enter your message.',
