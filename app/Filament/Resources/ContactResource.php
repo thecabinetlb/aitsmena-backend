@@ -35,6 +35,8 @@ class ContactResource extends Resource
                 TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('email'),
                 TextColumn::make('phone'),
+                TextColumn::make('company_name')->sortable()->searchable(),
+                TextColumn::make('subject'),
                 TextColumn::make('message'),
                 TextColumn::make('created_at')->sortable(),
             ])
