@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('title');
-            $table->string('slug')->unique();
-            $table->timestamps();
+        Schema::table('industry_insights_posts', function (Blueprint $table) {
+            $table->foreign('category_id')->references('id')->on('categories');            
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::table('industry_insights_posts', function (Blueprint $table) {
+            $table->dropForeign(['category_id']);
+        });
     }
 };

@@ -5,20 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Industry extends Model
 {
     use HasFactory;
-
+    
     protected $fillable = [
+        'thumbnail',
         'title',
+        'description',
         'slug',
+        'summary',
     ];
-
-    public function blogPosts()
-    {
-        return $this->hasMany(BlogsPost::class);
-    }
-    public function industryInsightsPosts()
+    public function IndustryInsights()
     {
         return $this->hasMany(IndustryInsightsPost::class);
     }

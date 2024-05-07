@@ -1,18 +1,14 @@
 <?php
 
 namespace App\Models;
-use App\Models\Category;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 
-class Post extends Model
+class IndustryInsightsPost extends Model
 {
     use HasFactory;
-
+    
     protected $fillable = [
         'title',
         'author',
@@ -24,16 +20,22 @@ class Post extends Model
         'published_at',
         'is_featured',
         'is_arabic',
+        'category_id',
+        'industry_id'
     ];
-
     protected $casts = [
         'tags' => 'array',
         'published_at' => 'datetime',
     ];
 
-    public function categories()
+    public function category()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsTo(category::class);
+    }
+
+    public function industry()
+    {
+        return $this->belongsTo(industry::class);
     }
 
     public function scopeTimePublished($query)
@@ -41,33 +43,16 @@ class Post extends Model
         $query->where('published_at', '<=', Carbon::now());
     }
 
-    public function scopeWithCategory($query, string $category)
-    {
-        $query->whereHas('categories', function ($query) use ($category) {
-            $query->where('slug', $category);
-        });
-    }
-
     public function scopeFeatured($query)
     {
-        $query->where('is_featured', true);
+        return $query->where('is_featured', true);
     }
-
+    
     public function scopeArabic($query)
     {
-        $query->where('is_arabic', true);
+        return $query->where('is_arabic', true);
     }
-
-    public function scopeSearch($query, string $search = '')
-    {
-        $query->where('title', 'like', "%{$search}%");
-    }
-
-    public function getExcerpt()
-    {
-        return Str::limit(strip_tags($this->body), 150);
-    }
-
+    
     public function getReadingTime()
     {
         $mins = round(str_word_count($this->body) / 250);
@@ -82,3 +67,4 @@ class Post extends Model
         return ($isUrl) ? $this->image : Storage::disk('public')->url($this->image);
     }
 }
+

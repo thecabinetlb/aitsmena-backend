@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('industry_insights_posts', function (Blueprint $table) {
             $table->id();
             $table->string('thumbnail')->nullable();
             $table->string('title');
@@ -23,6 +23,8 @@ return new class extends Migration
             $table->timestamp('published_at')->nullable();
             $table->boolean('is_featured')->default(false);
             $table->boolean('is_arabic')->default(false);
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->unsignedBigInteger('industry_id')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('industry_insights_posts');
     }
 };
