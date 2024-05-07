@@ -24,9 +24,9 @@ Route::post('contact_submissions', [ContactController::class, 'store']);
 Route::get('contact', [ContactController::class, 'index']);
 
 Route::get('blog-posts', [BlogPostController::class, 'index']);
-Route::get('blog-posts/featured', 'API\V1\BlogPostController@getFeatured');
-Route::get('blog-posts/arabic', 'API\V1\BlogPostController@getArabic');
+Route::get('blog-posts/featured', BlogPostController::class, 'getFeatured');
+Route::get('blog-posts/arabic', BlogPostController::class, 'getArabic');
 
 Route::get('industry-insights', [IndustryInsightsPostController::class, 'index']);
-Route::get('blog-posts/featured', 'API\V1\IndustryInsightsPostController@getFeatured');
-Route::get('blog-posts/arabic', 'API\V1\IndustryInsightsPostController@getArabic');
+Route::get('industry-insights/featured', IndustryInsightsPostController::class, 'getFeatured');
+Route::get('industry-insights/arabic', IndustryInsightsPostController::class, 'getArabic');

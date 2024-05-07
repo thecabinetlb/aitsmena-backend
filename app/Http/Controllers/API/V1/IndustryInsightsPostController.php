@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Http\Controllers\API\V1;
 
 use App\Http\Controllers\Controller;
@@ -10,10 +9,6 @@ use Illuminate\Http\Request;
 use App\Models\IndustryInsightsPost;
 use App\Models\Industry;
 
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
-
 class IndustryInsightsPostController extends Controller
 {
     public function index()
@@ -21,18 +16,21 @@ class IndustryInsightsPostController extends Controller
         return IndustryInsightsPost::all();
     }
 
-    public function getByIndustry()
+    public function getByIndustry(Industry $industry)
     {
-        return Industry::IndustryInsights()->get();    
+        $industryPosts = $industry->IndustryInsights()->get();
+        return response()->json($industryPosts);    
     }
 
-    public function getFeatured()
+    public function getFeatured(IndustryInsightsPost $indusryinsight)
     {
-        return IndustryInsightsPost::featured()->get();
+        $featuredPosts = $indusryinsight->featured()->get();
+        return response()->json($featuredPosts);
     }
 
-    public function getArabic()
+    public function getArabic(IndustryInsightsPost $indusryinsight)
     {
-        return IndustryInsightsPost::arabic()->get();
+        $arabicPosts = $indusryinsight->arabic()->get();
+        return response()->json($arabicPosts);
     }
 }

@@ -1,16 +1,10 @@
 <?php
 
-
 namespace App\Http\Controllers\API\V1;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller; 
 use App\Models\BlogPost;
-
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
 class BlogPostController extends Controller
 {
@@ -19,13 +13,15 @@ class BlogPostController extends Controller
         return BlogPost::all();
     }
 
-    public function getFeatured()
+    public function getFeatured(BlogPost $blogpost)
     {
-        return BlogPost::featured()->get();
+        $featuredPosts = $blogpost->featured()->get();
+        return response()->json($featuredPosts);
     }
 
-    public function getArabic()
+    public function getArabic(BlogPost $blogpost)
     {
-        return BlogPost::arabic()->get();
+        $arabicPosts = $blogpost->arabic()->get();
+        return response()->json($arabicPosts);
     }
 }
