@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\V1\ContactController;
 use App\Http\Controllers\API\V1\BlogPostController;
 use App\Http\Controllers\API\V1\IndustryInsightsPostController;
+use App\Http\Controllers\API\V1\SuccessStoriesPostController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -27,6 +28,10 @@ Route::get('blog-posts', [BlogPostController::class, 'index']);
 Route::get('blog-posts/featured', [BlogPostController::class, 'getFeatured']);
 Route::get('blog-posts/arabic', [BlogPostController::class, 'getArabic']);
 
-Route::get('industry-insights', [IndustryInsightsPostController::class, 'index']);
-Route::get('industry-insights/featured', [IndustryInsightsPostController::class, 'getFeatured']);
-Route::get('industry-insights/arabic', [IndustryInsightsPostController::class, 'getArabic']);
+Route::get('blog-posts', [BlogPostController::class, 'index']);
+Route::get('blog-posts/featured', [BlogPostController::class, 'getFeatured']);
+Route::get('blog-posts/arabic', [BlogPostController::class, 'getArabic']);
+
+Route::get('success-stories', [SuccessStoriesPostController::class, 'index']);
+Route::get('success-stories/featured', [SuccessStoriesPostController::class, 'getFeatured']);
+Route::get('success-stories/arabic', [SuccessStoriesPostController::class, 'getArabic']);

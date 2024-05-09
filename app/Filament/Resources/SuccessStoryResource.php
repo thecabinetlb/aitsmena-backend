@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\IndustryInsightsResource\Pages;
-use App\Filament\Resources\IndustryInsightsResource\RelationManagers;
-use App\Models\IndustryInsightsPost;
+use App\Filament\Resources\SuccessStoryResource\Pages;
+use App\Filament\Resources\SuccessStoryResource\RelationManagers;
+use App\Models\SuccessStoriesPost;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -28,9 +28,9 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Support\Str;
 
-class IndustryInsightsResource extends Resource
+class SuccessStoryResource extends Resource
 {
-    protected static ?string $model = IndustryInsightsPost::class;
+    protected static ?string $model = SuccessStoriesPost::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -38,6 +38,7 @@ class IndustryInsightsResource extends Resource
     {
         return $form
             ->schema([
+                FileUpload::make('logo')->image()->directory('posts/logos'),
                 TextInput::make('title')
                 ->live(onBlur:true)
                 ->unique(ignoreRecord: true)
@@ -101,9 +102,10 @@ class IndustryInsightsResource extends Resource
     {
         return $table
             ->columns([
+                ImageColumn::make('logo'),
+                TextColumn::make('title')->sortable()->searchable(),
                 ImageColumn::make('thumbnail')
                 ->defaultImageUrl(url('/images/logo-light.webp')),
-                TextColumn::make('title')->sortable()->searchable(),
                 TextColumn::make('slug')->sortable(),
                 TextColumn::make('published_at')->date('M-d-Y')->sortable()->searchable(),
                 ToggleColumn::make('is_featured')->label('Featured'),
@@ -139,9 +141,9 @@ class IndustryInsightsResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListIndustryInsights::route('/'),
-            'create' => Pages\CreateIndustryInsights::route('/create'),
-            'edit' => Pages\EditIndustryInsights::route('/{record}/edit'),
+            'index' => Pages\ListSuccessStories::route('/'),
+            'create' => Pages\CreateSuccessStory::route('/create'),
+            'edit' => Pages\EditSuccessStory::route('/{record}/edit'),
         ];
     }
 }
