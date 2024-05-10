@@ -7,6 +7,7 @@ use App\Http\Controllers\API\V1\ContactController;
 use App\Http\Controllers\API\V1\BlogPostController;
 use App\Http\Controllers\API\V1\IndustryInsightsPostController;
 use App\Http\Controllers\API\V1\SuccessStoriesPostController;
+use App\Http\Controllers\API\V1\WhitepapersController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -35,3 +36,9 @@ Route::get('blog-posts/arabic', [BlogPostController::class, 'getArabic']);
 Route::get('success-stories', [SuccessStoriesPostController::class, 'index']);
 Route::get('success-stories/featured', [SuccessStoriesPostController::class, 'getFeatured']);
 Route::get('success-stories/arabic', [SuccessStoriesPostController::class, 'getArabic']);
+
+Route::get('whitepapers', [WhitepapersController::class, 'index']);
+Route::get('whitepapers/featured', [WhitepapersController::class, 'getFeatured']);
+Route::get('whitepapers/arabic', [WhitepapersController::class, 'getArabic']);
+Route::get('whitepapers/gated', [WhitepapersController::class, 'getGated']);
+Route::get('whitepapers/not-gated', [WhitepapersController::class, 'getNoteGated']);

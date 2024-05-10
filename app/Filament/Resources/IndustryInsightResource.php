@@ -56,7 +56,7 @@ class IndustryInsightResource extends Resource
                 ->minLength(10)
                 ->maxLength(300)
                 ->required(),
-                FileUpload::make('thumbnail')->image()->directory('posts/thumbnails'),
+                FileUpload::make('thumbnail')->image()->directory('industry-insights/thumbnails'),
                 RichEditor::make('body')
                 ->toolbarButtons([
                     'attachFiles',
@@ -74,11 +74,8 @@ class IndustryInsightResource extends Resource
                     'underline',
                     'undo',
                 ])
-                ->fileAttachmentsDirectory('posts/images')
-                ->required(),
-                CheckboxList::make('industries')
-                ->relationship('industries', 'title')
-                ->required(),                
+                ->fileAttachmentsDirectory('industry-insights/images')
+                ->required(),              
                 DateTimePicker::make('published_at')
                     ->default(now()),
                 TagsInput::make('tags')

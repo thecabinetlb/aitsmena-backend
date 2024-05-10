@@ -31,4 +31,5 @@ class SuccessStoriesPostController extends Controller
     {
         $arabicPosts = $successstories->arabic()->get();
         return response()->json($arabicPosts);
-    }}
+    }
+}

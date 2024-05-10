@@ -13,7 +13,6 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\DateTimePicker;
@@ -57,7 +56,7 @@ class SuccessStoryResource extends Resource
                 ->minLength(10)
                 ->maxLength(300)
                 ->required(),
-                FileUpload::make('thumbnail')->image()->directory('posts/thumbnails'),
+                FileUpload::make('thumbnail')->image()->directory('success-stories/thumbnails'),
                 RichEditor::make('body')
                 ->toolbarButtons([
                     'attachFiles',
@@ -75,7 +74,7 @@ class SuccessStoryResource extends Resource
                     'underline',
                     'undo',
                 ])
-                ->fileAttachmentsDirectory('posts/images')
+                ->fileAttachmentsDirectory('success-stories/images')
                 ->required(),
                 CheckboxList::make('industries')
                 ->relationship('industries', 'title')
@@ -106,7 +105,8 @@ class SuccessStoryResource extends Resource
                 TextColumn::make('title')->sortable()->searchable(),
                 ImageColumn::make('thumbnail')
                 ->defaultImageUrl(url('/images/logo-light.webp')),
-                TextColumn::make('slug')->sortable(),
+                TextColumn::make('slug'),
+                TextColumn::make('industry_id')->sortable(),
                 TextColumn::make('published_at')->date('M-d-Y')->sortable()->searchable(),
                 ToggleColumn::make('is_featured')->label('Featured'),
                 ToggleColumn::make('is_arabic')->label('In Arabic'),

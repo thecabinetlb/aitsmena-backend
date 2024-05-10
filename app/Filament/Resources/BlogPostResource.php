@@ -55,7 +55,7 @@ class BlogPostResource extends Resource
                 ->minLength(10)
                 ->maxLength(300)
                 ->required(),
-                FileUpload::make('thumbnail')->image()->directory('posts/thumbnails'),
+                FileUpload::make('thumbnail')->image()->directory('blog/thumbnails'),
                 RichEditor::make('body')
                 ->toolbarButtons([
                     'attachFiles',
@@ -73,7 +73,7 @@ class BlogPostResource extends Resource
                     'underline',
                     'undo',
                 ])
-                ->fileAttachmentsDirectory('posts/images')
+                ->fileAttachmentsDirectory('blog/images')
                 ->required(),
                 DateTimePicker::make('published_at')
                     ->default(now()),
