@@ -22,7 +22,6 @@ class SuccessStoryFactory extends Factory
         $industryIds = Industry::pluck('id')->toArray();
         return [
             'title' => $this->faker->sentence,
-            'author' => $this->faker->name,
             'slug' => $this->faker->slug,
             'summary' => $this->faker->paragraph,
             'tags' => ['tag1', 'tag2'], // Example array of tags

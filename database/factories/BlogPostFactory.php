@@ -18,7 +18,6 @@ class BlogPostFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(),
-            'author' => $this->faker->name(),
             'slug' => $this->faker->slug(3),
             'thumbnail' => $this->faker->imageUrl(),
             'summary' => $this->faker->paragraph(5),

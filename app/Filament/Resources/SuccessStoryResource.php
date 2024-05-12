@@ -11,7 +11,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 
 use Filament\Forms\Components\Toggle;
-use Filament\Forms\Components\CheckboxList;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
@@ -72,17 +72,19 @@ class SuccessStoryResource extends Resource
                 ])
                 ->fileAttachmentsDirectory('success-stories/images')
                 ->required(),
-                CheckboxList::make('industries')
-                ->relationship('industries', 'title')
-                ->required(),                
+                Select::make('industry_id')
+                ->label('Industry')
+                ->relationship('industry', 'title')
+                ->searchable()
+                ->required(),
                 DateTimePicker::make('published_at')
                     ->default(now()),
                 TagsInput::make('tags')
                 ->suggestions([
-                    'tailwindcss',
-                    'alpinejs',
-                    'laravel',
-                    'livewire',
+                    'industrial digitalization',
+                    'industrial innovation',
+                    'system integrators',
+                    'industrial digital templates',
                 ])
                 ->nestedRecursiveRules([
                     'min:3',
@@ -102,7 +104,7 @@ class SuccessStoryResource extends Resource
                 ImageColumn::make('thumbnail')
                 ->defaultImageUrl(url('/images/logo-light.webp')),
                 TextColumn::make('slug'),
-                TextColumn::make('industry_id')->sortable(),
+                TextColumn::make('industry.title')->searchable(),
                 TextColumn::make('published_at')->date('M-d-Y')->sortable()->searchable(),
                 ToggleColumn::make('is_featured')->label('Featured'),
                 ToggleColumn::make('is_arabic')->label('In Arabic'),

@@ -13,7 +13,6 @@ class IndustryInsight extends Model
     
     protected $fillable = [
         'title',
-        'author',
         'slug',
         'summary',
         'tags',

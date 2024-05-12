@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('thumbnail')->nullable();
             $table->string('title');
-            $table->string('author');
             $table->string('slug')->unique();
             $table->text('summary');
             $table->text('body');

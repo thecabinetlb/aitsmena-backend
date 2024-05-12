@@ -11,7 +11,6 @@ use Filament\Tables;
 use Filament\Tables\Table;
 
 use Filament\Forms\Components\Toggle;
-use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
@@ -45,7 +44,6 @@ class BlogPostResource extends Resource
                     $set('slug', Str::slug($state));
                 }),
                 TextInput::make('slug')->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(150),
-                TextInput::make('author')->required(),
                 TextArea::make('summary')
                 ->rows(5)
                 ->cols(20)
@@ -76,10 +74,10 @@ class BlogPostResource extends Resource
                     ->default(now()),
                 TagsInput::make('tags')
                 ->suggestions([
-                    'tailwindcss',
-                    'alpinejs',
-                    'laravel',
-                    'livewire',
+                    'industrial digitalization',
+                    'industrial innovation',
+                    'system integrators',
+                    'industrial digital templates',
                 ])
                 ->nestedRecursiveRules([
                     'min:3',

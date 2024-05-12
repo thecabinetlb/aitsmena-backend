@@ -74,10 +74,10 @@ class IndustryInsightResource extends Resource
                     ->default(now()),
                 TagsInput::make('tags')
                 ->suggestions([
-                    'tailwindcss',
-                    'alpinejs',
-                    'laravel',
-                    'livewire',
+                    'industrial digitalization',
+                    'industrial innovation',
+                    'system integrators',
+                    'industrial digital templates',
                 ])
                 ->nestedRecursiveRules([
                     'min:3',

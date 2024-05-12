@@ -11,7 +11,6 @@ class SuccessStory extends Model
     use HasFactory;
     protected $fillable = [
         'title',
-        'author',
         'slug',
         'summary',
         'tags',
