@@ -5,14 +5,14 @@ namespace App\Http\Controllers\API\V1;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\SuccessStoriesPost;
+use App\Models\SuccessStory;
 use App\Models\Industry;
 
-class SuccessStoriesPostController extends Controller
+class SuccessStoryController extends Controller
 {
     public function index()
     {
-        return SuccessStoriesPost::all();
+        return SuccessStory::all();
     }
 
     public function getByIndustry(Industry $industry)
@@ -21,13 +21,13 @@ class SuccessStoriesPostController extends Controller
         return response()->json($industryPosts);    
     }
 
-    public function getFeatured(SuccessStoriesPost $successstories)
+    public function getFeatured(SuccessStory $successstories)
     {
         $featuredPosts = $successstories->featured()->get();
         return response()->json($featuredPosts);
     }
 
-    public function getArabic(SuccessStoriesPost $successstories)
+    public function getArabic(SuccessStory $successstories)
     {
         $arabicPosts = $successstories->arabic()->get();
         return response()->json($arabicPosts);

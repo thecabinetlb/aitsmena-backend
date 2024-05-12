@@ -5,9 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\API\V1\ContactController;
 use App\Http\Controllers\API\V1\BlogPostController;
-use App\Http\Controllers\API\V1\IndustryInsightsPostController;
-use App\Http\Controllers\API\V1\SuccessStoriesPostController;
-use App\Http\Controllers\API\V1\WhitepapersController;
+use App\Http\Controllers\API\V1\IndustryInsightController;
+use App\Http\Controllers\API\V1\SuccessStoryController;
+use App\Http\Controllers\API\V1\WhitepaperController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -29,16 +29,20 @@ Route::get('blog-posts', [BlogPostController::class, 'index']);
 Route::get('blog-posts/featured', [BlogPostController::class, 'getFeatured']);
 Route::get('blog-posts/arabic', [BlogPostController::class, 'getArabic']);
 
+Route::get('industry-insights', [IndustryInsightController::class, 'index']);
+Route::get('industry-insights/featured', [IndustryInsightController::class, 'getFeatured']);
+Route::get('industry-insights/arabic', [IndustryInsightController::class, 'getArabic']);
+
 Route::get('blog-posts', [BlogPostController::class, 'index']);
 Route::get('blog-posts/featured', [BlogPostController::class, 'getFeatured']);
 Route::get('blog-posts/arabic', [BlogPostController::class, 'getArabic']);
 
-Route::get('success-stories', [SuccessStoriesPostController::class, 'index']);
-Route::get('success-stories/featured', [SuccessStoriesPostController::class, 'getFeatured']);
-Route::get('success-stories/arabic', [SuccessStoriesPostController::class, 'getArabic']);
+Route::get('success-stories', [SuccessStoryController::class, 'index']);
+Route::get('success-stories/featured', [SuccessStoryController::class, 'getFeatured']);
+Route::get('success-stories/arabic', [SuccessStoryController::class, 'getArabic']);
 
-Route::get('whitepapers', [WhitepapersController::class, 'index']);
-Route::get('whitepapers/featured', [WhitepapersController::class, 'getFeatured']);
-Route::get('whitepapers/arabic', [WhitepapersController::class, 'getArabic']);
-Route::get('whitepapers/gated', [WhitepapersController::class, 'getGated']);
-Route::get('whitepapers/not-gated', [WhitepapersController::class, 'getNoteGated']);
+Route::get('whitepapers', [WhitepaperController::class, 'index']);
+Route::get('whitepapers/featured', [WhitepaperController::class, 'getFeatured']);
+Route::get('whitepapers/arabic', [WhitepaperController::class, 'getArabic']);
+Route::get('whitepapers/gated', [WhitepaperController::class, 'getGated']);
+Route::get('whitepapers/not-gated', [WhitepaperController::class, 'getNoteGated']);

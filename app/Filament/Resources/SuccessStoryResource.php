@@ -3,15 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\SuccessStoryResource\Pages;
-use App\Filament\Resources\SuccessStoryResource\RelationManagers;
-use App\Models\SuccessStoriesPost;
+use App\Models\SuccessStory;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\CheckboxList;
@@ -29,7 +26,7 @@ use Illuminate\Support\Str;
 
 class SuccessStoryResource extends Resource
 {
-    protected static ?string $model = SuccessStoriesPost::class;
+    protected static ?string $model = SuccessStory::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -49,7 +46,6 @@ class SuccessStoryResource extends Resource
                     $set('slug', Str::slug($state));
                 }),
                 TextInput::make('slug')->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(150),
-                TextInput::make('author')->required(),
                 TextArea::make('summary')
                 ->rows(5)
                 ->cols(20)

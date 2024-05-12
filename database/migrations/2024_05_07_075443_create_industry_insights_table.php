@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('industry_insights_posts', function (Blueprint $table) {
+        Schema::create('industry_insights', function (Blueprint $table) {
             $table->id();
             $table->string('thumbnail')->nullable();
             $table->string('title');
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('industry_insights_posts');
+        Schema::dropIfExists('industry_insights');
     }
 };

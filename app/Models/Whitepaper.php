@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class Whitepaper extends Model
 {
@@ -31,7 +33,10 @@ class Whitepaper extends Model
     {
         return $this->belongsTo(category::class);
     }
-
+    public function industry()
+    {
+        return $this->belongsTo(industry::class);
+    }
     public function scopeTimePublished($query)
     {
         $query->where('published_at', '<=', Carbon::now());

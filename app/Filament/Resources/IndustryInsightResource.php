@@ -3,19 +3,14 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\IndustryInsightResource\Pages;
-use App\Filament\Resources\IndustryInsightResource\RelationManagers;
-use App\Models\IndustryInsightsPost;
+use App\Models\IndustryInsight;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-
 
 use Filament\Forms\Components\Toggle;
-use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
@@ -30,7 +25,7 @@ use Illuminate\Support\Str;
 
 class IndustryInsightResource extends Resource
 {
-    protected static ?string $model = IndustryInsightsPost::class;
+    protected static ?string $model = IndustryInsight::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -49,7 +44,6 @@ class IndustryInsightResource extends Resource
                     $set('slug', Str::slug($state));
                 }),
                 TextInput::make('slug')->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(150),
-                TextInput::make('author')->required(),
                 TextArea::make('summary')
                 ->rows(5)
                 ->cols(20)

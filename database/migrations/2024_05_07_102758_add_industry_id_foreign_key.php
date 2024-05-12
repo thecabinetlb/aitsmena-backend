@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('industry_insights_posts', function (Blueprint $table) {
+        Schema::table('industry_insights', function (Blueprint $table) {
             $table->foreign('industry_id')->references('id')->on('industries');            
         });
     }
@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('industry_insights_posts', function (Blueprint $table) {
+        Schema::table('industry_insights', function (Blueprint $table) {
             $table->dropForeign(['industry_id']);
         });
     }

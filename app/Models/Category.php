@@ -16,10 +16,14 @@ class Category extends Model
 
     public function blogPosts()
     {
-        return $this->hasMany(BlogsPost::class);
+        return $this->hasMany(BlogPost::class);
     }
-    public function industryInsightsPosts()
+    public function IndustryInsights()
     {
-        return $this->hasMany(IndustryInsightsPost::class);
+        return $this->hasMany(IndustryInsight::class);
+    }
+    public function SuccessStories()
+    {
+        return $this->hasMany(SuccessStory::class);
     }
 }

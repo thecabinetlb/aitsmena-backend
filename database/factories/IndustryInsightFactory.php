@@ -7,9 +7,9 @@ use App\Models\Industry;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\SuccessStoriesPost>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\IndustryInsight>
  */
-class SuccessStoriesPostFactory extends Factory
+class IndustryInsightFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -27,12 +27,11 @@ class SuccessStoriesPostFactory extends Factory
             'summary' => $this->faker->paragraph,
             'tags' => ['tag1', 'tag2'], // Example array of tags
             'thumbnail' => $this->faker->imageUrl(),
-            'logo' => $this->faker->imageUrl(100, 100), // Generate a business-related logo URL
             'body' => $this->faker->paragraphs(3, true),
             'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'is_featured' => $this->faker->boolean,
             'is_arabic' => $this->faker->boolean,
-            'category_id' => 4, // Assuming 4 is the ID of the 'sucess stories' category,
+            'category_id' => 2, // Assuming 2 is the ID of the 'industry insights' category,
             'industry_id' => $this->faker->randomElement($industryIds), // Randomly select an industry ID
         ];
     }

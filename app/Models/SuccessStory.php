@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
-class SuccessStoriesPost extends Model
+class SuccessStory extends Model
 {
     use HasFactory;
     protected $fillable = [
@@ -40,7 +41,7 @@ class SuccessStoriesPost extends Model
 
     public function scopeTimePublished($query)
     {
-        $query->where('published_at', '<=', Carbon::now());
+        $query->where('published_at', '<=', Carbon:now());
     }
 
     public function scopeFeatured($query)

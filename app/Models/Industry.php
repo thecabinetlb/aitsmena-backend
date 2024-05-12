@@ -18,6 +18,14 @@ class Industry extends Model
     ];
     public function IndustryInsights()
     {
-        return $this->hasMany(IndustryInsightsPost::class);
+        return $this->hasMany(IndustryInsight::class);
+    }
+    public function SuccessStories()
+    {
+        return $this->hasMany(SuccessStory::class);
+    }
+    public function Whitepapers()
+    {
+        return $this->hasMany(Whitepaper::class);
     }
 }

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('success_stories_posts', function (Blueprint $table) {
+        Schema::create('success_stories', function (Blueprint $table) {
             $table->id();
             $table->string('thumbnail')->nullable();
             $table->string('title');
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('success_stories_posts');
+        Schema::dropIfExists('success_stories');
     }
 };

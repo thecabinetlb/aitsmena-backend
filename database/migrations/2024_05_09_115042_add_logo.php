@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('success_stories_posts', function (Blueprint $table) {
+        Schema::table('success_stories', function (Blueprint $table) {
             $table->string('logo')->nullable();
         });
     }
@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('success_stories_posts', function (Blueprint $table) {
+        Schema::table('success_stories', function (Blueprint $table) {
             //
         });
     }
