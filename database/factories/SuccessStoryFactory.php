@@ -26,7 +26,8 @@ class SuccessStoryFactory extends Factory
             'summary' => $this->faker->paragraph,
             'tags' => ['tag1', 'tag2'], // Example array of tags
             'thumbnail' => $this->faker->imageUrl(),
-            'logo' => $this->faker->imageUrl(100, 100), // Generate a business-related logo URL
+            'customer_name'=> $this->faker->name(),
+            'customer_logo' => $this->faker->imageUrl(100, 100), // Generate a business-related logo URL
             'body' => $this->faker->paragraphs(3, true),
             'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'is_featured' => $this->faker->boolean,

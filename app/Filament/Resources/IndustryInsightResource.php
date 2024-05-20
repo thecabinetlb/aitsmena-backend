@@ -13,11 +13,12 @@ use Filament\Tables\Table;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Group;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\RichEditor;
-
+use Filament\Forms\Components\Section;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -27,65 +28,84 @@ class IndustryInsightResource extends Resource
 {
     protected static ?string $model = IndustryInsight::class;
 
+    protected static ?string $navigationGroup = 'Resources';    
+    
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
         return $form
+        ->schema([
+        Section::make('Create a industry insight post')
+        ->description('create industry insight posts here.')
             ->schema([
-                TextInput::make('title')
-                ->live(onBlur:true)
-                ->unique(ignoreRecord: true)
-                ->required()->minLength(1)->maxLength(150)
-                ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
-                    if ($operation === 'edit') {
-                        return;
-                    }                    
-                    $set('slug', Str::slug($state));
-                }),
-                TextInput::make('slug')->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(150),
-                TextArea::make('summary')
-                ->rows(5)
-                ->cols(20)
-                ->minLength(10)
-                ->maxLength(300)
-                ->required(),
-                FileUpload::make('thumbnail')->image()->directory('industry-insights/thumbnails'),
-                RichEditor::make('body')
-                ->toolbarButtons([
-                    'attachFiles',
-                    'blockquote',
-                    'bold',
-                    'bulletList',
-                    'codeBlock',
-                    'h2',
-                    'h3',
-                    'italic',
-                    'link',
-                    'orderedList',
-                    'redo',
-                    'strike',
-                    'underline',
-                    'undo',
-                ])
-                ->fileAttachmentsDirectory('industry-insights/images')
-                ->required(),              
-                DateTimePicker::make('published_at')
-                    ->default(now()),
-                TagsInput::make('tags')
-                ->suggestions([
-                    'industrial digitalization',
-                    'industrial innovation',
-                    'system integrators',
-                    'industrial digital templates',
-                ])
-                ->nestedRecursiveRules([
-                    'min:3',
-                    'max:255',
-                ]),
-                Toggle::make('is_featured')->inline(),
-                Toggle::make('is_arabic')->inline()
-            ]);
+            TextInput::make('title')
+            ->live(onBlur:true)
+            ->unique(ignoreRecord: true)
+            ->required()->minLength(1)->maxLength(150)
+            ->afterStateUpdated(function (string $operation, $state, Forms\Set $set) {
+                if ($operation === 'edit') {
+                    return;
+                }                    
+                $set('slug', Str::slug($state));
+            }),
+            TextInput::make('slug')->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(150),
+            TextArea::make('summary')
+            ->rows(5)
+            ->cols(20)
+            ->minLength(10)
+            ->maxLength(300)
+            ->required()
+            ->columnSpanFull(),
+            RichEditor::make('body')
+            ->toolbarButtons([
+                'attachFiles',
+                'blockquote',
+                'bold',
+                'bulletList',
+                'codeBlock',
+                'h2',
+                'h3',
+                'italic',
+                'link',
+                'orderedList',
+                'redo',
+                'strike',
+                'underline',
+                'undo',
+            ])
+            ->fileAttachmentsDirectory('industry-insights/images')
+            ->required()
+            ->columnSpanFull(),
+            DateTimePicker::make('published_at')
+            ->default(now())
+            ->columnSpanFull(),            
+            Toggle::make('is_featured')->label('Is Featured')->inline(),
+            Toggle::make('is_arabic')->label('Is Arabic')->inline(),
+            ])->columnSpan(1)->columns(2)
+            ->collapsible(),
+            Group::make()
+            ->schema([
+                Section::make('Image')
+                ->schema([
+                    FileUpload::make('thumbnail')->image()->directory('industry-insights/thumbnails')            
+                ])->collapsible(),
+                Section::make('Meta')
+                ->schema([
+                    TagsInput::make('tags')
+                    ->suggestions([
+                        'industrial digitalization',
+                        'industrial innovation',
+                        'system integrators',
+                        'industrial digital templates',
+                    ])
+                    ->nestedRecursiveRules([
+                        'min:3',
+                        'max:255',
+                    ])
+                ])->collapsible(),
+            ])->columnSpan(1)->columns(1)
+        ]);
     }
 
     public static function table(Table $table): Table

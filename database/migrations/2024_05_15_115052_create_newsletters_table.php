@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('success_stories', function (Blueprint $table) {
-            $table->string('logo')->nullable();
+        Schema::create('newsletters', function (Blueprint $table) {
+            $table->id();
+            $table->string('email')->unique();
+            $table->timestamp('signedup_at')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -21,8 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('success_stories', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('newsletters');
     }
 };
