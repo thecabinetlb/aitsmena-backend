@@ -13,7 +13,6 @@ use Filament\Tables\Table;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Group;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TagsInput;
@@ -25,6 +24,10 @@ use Filament\Tables\Columns\TextColumn;
 use Illuminate\Support\Str;
 
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Group;
+
+use Filament\Tables\Columns\Layout\Split;
+use Filament\Tables\Columns\Layout\Stack;
 
 class BlogPostResource extends Resource
 {
@@ -114,19 +117,18 @@ class BlogPostResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('thumbnail')
-                ->defaultImageUrl(url('/images/logo-light.webp')),
-                TextColumn::make('title')->sortable()->searchable(),
-                TextColumn::make('slug')->sortable(),
-                TextColumn::make('published_at')->date('M-d-Y')->sortable()->searchable(),
-                ToggleColumn::make('is_featured')->label('Featured'),
-                ToggleColumn::make('is_arabic')->label('In Arabic'),
-                TextColumn::make('created_at')
-                ->dateTime('M-d-Y')
-                ->sortable()
-                ->searchable(),
-                TextColumn::make('updated_at')
-                ->dateTime('M-d-Y'),          
+            ImageColumn::make('thumbnail')
+            ->defaultImageUrl(url('/images/logo-light.webp'))->grow(false),
+            TextColumn::make('title')->sortable()->searchable(),
+            TextColumn::make('slug')->sortable(),
+            ToggleColumn::make('is_featured')->label('Featured'),
+            ToggleColumn::make('is_arabic')->label('In Arabic'),
+            TextColumn::make('created_at')
+            ->dateTime('M-d-Y')
+            ->sortable()
+            ->searchable(),
+            TextColumn::make('updated_at')
+            ->dateTime('M-d-Y')
             ])
             ->filters([
                 //

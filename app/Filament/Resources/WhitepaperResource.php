@@ -21,7 +21,6 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TagsInput;
 
 use Filament\Tables\Columns\ToggleColumn;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Support\Str;
 
@@ -102,7 +101,6 @@ class WhitepaperResource extends Resource
             ->columns([
                 TextColumn::make('title')->sortable()->searchable(),
                 TextColumn::make('slug'),
-                TextColumn::make('published_at')->date('M-d-Y')->sortable()->searchable(),
                 ToggleColumn::make('is_featured')->label('Featured'),
                 ToggleColumn::make('is_arabic')->label('In Arabic'),
                 ToggleColumn::make('is_gated')->label('Gated'),
@@ -111,7 +109,7 @@ class WhitepaperResource extends Resource
                 ->sortable()
                 ->searchable(),
                 TextColumn::make('updated_at')
-                ->dateTime('M-d-Y'),          
+                ->dateTime('M-d-Y'),        
             ])
             ->filters([
                 //

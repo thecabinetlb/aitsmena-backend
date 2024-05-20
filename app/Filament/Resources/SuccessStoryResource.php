@@ -133,7 +133,6 @@ class SuccessStoryResource extends Resource
                 ->defaultImageUrl(url('/images/logo-light.webp')),
                 TextColumn::make('slug'),
                 TextColumn::make('industry.title')->searchable(),
-                TextColumn::make('published_at')->date('M-d-Y')->sortable()->searchable(),
                 ToggleColumn::make('is_featured')->label('Featured'),
                 ToggleColumn::make('is_arabic')->label('In Arabic'),
                 TextColumn::make('created_at')
