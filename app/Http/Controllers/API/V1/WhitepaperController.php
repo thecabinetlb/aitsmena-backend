@@ -15,27 +15,33 @@ class WhitepaperController extends Controller
         return Whitepaper::all();
     }
 
-    public function getGated(Whitepaper $whitepapers)
+    public function getBySlug(Whitepaper $whitepaper)
     {
-        $featuredPosts = $whitepapers->gated()->get();
+        $post = Whitepaper::where($whitepaper->slug)->first();
+        return response()->json($post);
+    }
+
+    public function getGated(Whitepaper $whitepaper)
+    {
+        $featuredPosts = $whitepaper->gated()->get();
         return response()->json($featuredPosts);
     }
 
-    public function getNotGated(Whitepaper $whitepapers)
+    public function getNotGated(Whitepaper $whitepaper)
     {
-        $featuredPosts = $whitepapers->notGated()->get();
+        $featuredPosts = $whitepaper->notGated()->get();
         return response()->json($featuredPosts);
     }
 
-    public function getFeatured(Whitepaper $whitepapers)
+    public function getFeatured(Whitepaper $whitepaper)
     {
-        $featuredPosts = $whitepapers->featured()->get();
+        $featuredPosts = $whitepaper->featured()->get();
         return response()->json($featuredPosts);
     }
 
-    public function getArabic(Whitepaper $whitepapers)
+    public function getArabic(Whitepaper $whitepaper)
     {
-        $arabicPosts = $whitepapers->arabic()->get();
+        $arabicPosts = $whitepaper->arabic()->get();
         return response()->json($arabicPosts);
     }
 }

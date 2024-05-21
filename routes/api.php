@@ -26,22 +26,22 @@ Route::post('contact_submissions', [ContactController::class, 'store']);
 Route::get('contact', [ContactController::class, 'index']);
 
 Route::get('blog-posts', [BlogPostController::class, 'index']);
+Route::get('blog-posts/{slug}', [BlogPostController::class, 'getBySlug']);
 Route::get('blog-posts/featured', [BlogPostController::class, 'getFeatured']);
 Route::get('blog-posts/arabic', [BlogPostController::class, 'getArabic']);
 
 Route::get('industry-insights', [IndustryInsightController::class, 'index']);
+Route::get('industry-insights/{slug}', [IndustryInsightController::class, 'getBySlug']);
 Route::get('industry-insights/featured', [IndustryInsightController::class, 'getFeatured']);
 Route::get('industry-insights/arabic', [IndustryInsightController::class, 'getArabic']);
 
-Route::get('blog-posts', [BlogPostController::class, 'index']);
-Route::get('blog-posts/featured', [BlogPostController::class, 'getFeatured']);
-Route::get('blog-posts/arabic', [BlogPostController::class, 'getArabic']);
-
 Route::get('success-stories', [SuccessStoryController::class, 'index']);
+Route::get('success-stories/{slug}', [SuccessStoryController::class, 'getBySlug']);
 Route::get('success-stories/featured', [SuccessStoryController::class, 'getFeatured']);
 Route::get('success-stories/arabic', [SuccessStoryController::class, 'getArabic']);
 
 Route::get('whitepapers', [WhitepaperController::class, 'index']);
+Route::get('whitepapers/{slug}', [WhitepaperController::class, 'getBySlug']);
 Route::get('whitepapers/featured', [WhitepaperController::class, 'getFeatured']);
 Route::get('whitepapers/arabic', [WhitepaperController::class, 'getArabic']);
 Route::get('whitepapers/gated', [WhitepaperController::class, 'getGated']);

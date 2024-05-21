@@ -32,7 +32,7 @@ class BlogPost extends Model
     {
         return $this->belongsTo(Category::class);
     }
-    
+
     public function scopeTimePublished($query)
     {
         $query->where('published_at', '<=', Carbon::now());
@@ -58,5 +58,11 @@ class BlogPost extends Model
         $mins = round(str_word_count($this->body) / 250);
 
         return ($mins < 1) ? 1 : $mins;
+    }
+    public function getThumbnailUrl()
+    {
+        $isUrl = str_contains($this->image, 'http');
+
+        return ($isUrl) ? $this->image : Storage::disk('public')->Storage::url($this->image);
     }
 }

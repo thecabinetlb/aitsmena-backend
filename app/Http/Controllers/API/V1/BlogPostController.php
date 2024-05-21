@@ -13,6 +13,12 @@ class BlogPostController extends Controller
         return BlogPost::all();
     }
 
+    public function getBySlug(BlogPost $blogpost)
+    {
+        $post = BlogPost::where($blogpost->slug)->first();
+        return response()->json($post);
+    }
+
     public function getFeatured(BlogPost $blogpost)
     {
         $featuredPosts = $blogpost->featured()->get();

@@ -15,6 +15,12 @@ class SuccessStoryController extends Controller
         return SuccessStory::all();
     }
 
+    public function getBySlug(SuccessStory $successstory)
+    {
+        $post = SuccessStory::where($successstory->slug)->first();
+        return response()->json($post);
+    }
+
     public function getByIndustry(Industry $industry)
     {
         $industryPosts = $industry->IndustryInsights()->get();
