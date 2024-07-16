@@ -26,8 +26,8 @@ app.use(VueRecaptchaPlugin, {
   v2SiteKey: '6LcX3AsqAAAAAKG0sYoZ3G3oQxqvLE8VeXHfnN_P',
 });
 
-app.component('header-view', Header);
-app.component('footer-view', Footer);
+app.component('header-component', Header);
+app.component('footer-component', Footer);
 app.component('home-view', HomeView);
 app.component('contact-view', ContactView);
 app.component('about-view', AboutView);
