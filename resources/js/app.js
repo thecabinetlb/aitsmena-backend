@@ -5,6 +5,8 @@ import { createHead } from '@unhead/vue'
 import { MotionPlugin } from '@vueuse/motion'
 import { VueRecaptchaPlugin } from 'vue-recaptcha/head'
 
+import Header from './components/layouts/Header.vue'
+import Footer from './components/layouts/Footer.vue'
 import HomeView from './views/HomeView.vue'
 import ContactView from './views/ContactView.vue'
 import AboutView from './views/AboutView.vue'
@@ -23,6 +25,9 @@ app.use(MotionPlugin);
 app.use(VueRecaptchaPlugin, {
   v2SiteKey: '6LcX3AsqAAAAAKG0sYoZ3G3oQxqvLE8VeXHfnN_P',
 });
+
+app.component('header-view', Header);
+app.component('footer-view', Footer);
 app.component('home-view', HomeView);
 app.component('contact-view', ContactView);
 app.component('about-view', AboutView);

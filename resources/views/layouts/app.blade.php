@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
- 
-        <meta name="application-name" content="{{ config('app.name') }}">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-        <title>{{ config('app.name') }}</title>
- 
-        <style>[x-cloak] { display: none !important; }</style>
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @livewireStyles
-        @livewireScripts
-        @stack('scripts')
-    </head>
- 
-    <body class="antialiased">
-        {{ $slot }}
- 
-        @livewire('notifications')
-    </body>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ config('app.name') }}</title>
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
+</head>
+<body class="font-body bg-bg">
+    <div id="app">
+        @yield('content')
+    </div>
+</body>
 </html>
