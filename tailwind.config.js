@@ -27,11 +27,11 @@ export default {
         '10': '0.1',
       },
       backgroundImage: {
-        'noise':'url(/images/noise/noise_v2.svg)',
-        'footer-noise':'url(/images/noise/footer-noise.svg)',
-        'extended-noise':'url(/images/noise/extended-noise_v2.svg)',
-        'colors':'url(/images/insidepages/elements/allelements.webp)',
-        'mobilecolors':'url(/images/insidepages/elements/allelementsmobile_v1.webp)',
+        'noise':'url(/@public/images/noise/noise_v2.svg)',
+        'footer-noise':'url(/@public/images/noise/footer-noise.svg)',
+        'extended-noise':'url(/@public/images/noise/extended-noise_v2.svg)',
+        'colors':'url(/@public/images/insidepages/elements/allelements.webp)',
+        'mobilecolors':'url(/@public/images/insidepages/elements/allelementsmobile_v1.webp)',
       },
       aspectRatio: {
         '1.59/1': '1.59 / 1',
