@@ -84,9 +84,9 @@ export function getSuccessStories (){
       // }
     ];
   }
-  export function getSuccessStoryById(id) {
+  export function getSuccessStoryBySlug(slug) {
     let stories = getSuccessStories();
-    return stories.find(story => story.id === parseInt(id));
+    return stories.find(story => story.slug === slug);
   }
   export function getBlogPosts(){
     return [
@@ -100,7 +100,7 @@ export function getSuccessStories (){
       { id: 8, title: 'Scaling Up: Strategies for Successful Industrial Digitization Implementation', slug:'slug8', summary: 'Explore strategies for effectively scaling up industrial digitization initiatives and achieving sustainable growth.', body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu justo id libero tincidunt accumsan eget sed purus. Nullam nec sodales tellus, vitae mattis lorem. Integer nec lacus nisl. Aenean pharetra suscipit nisi nec gravida. Nulla facilisi. Nullam vel sapien ut enim efficitur sollicitudin a id tortor. Sed in magna nisl. Nulla lobortis ligula sit amet commodo congue. Maecenas fringilla consectetur purus, eget pharetra odio. Vivamus vestibulum risus vitae eros laoreet vulputate. Nulla facilisi. Aenean consequat auctor dui, sit amet volutpat urna varius vitae. Sed ullamcorper, magna a ultrices ultrices, velit dui placerat urna, a ullamcorper lectus dolor quis nunc. Cras convallis ante eget velit malesuada lobortis.', published_at: '2024-04-19', is_featured: false, is_arabic: false }
     ];  
   }
-  export function getBlogPostById(slug) {
+  export function getBlogPostBySlug(slug) {
     let blogs = getBlogPosts();
     return blogs.find(blog => blog.slug === slug);
   }

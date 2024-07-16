@@ -59,7 +59,7 @@ import BenefitsFlexWithBlur from '../components/BenefitsFlexWithBlur.vue';
       <title>AITS - Join the AITS Team</title>
       <meta name="description" content="Browse through our available job openings to join the team and make an impact at AITS! We welcome diverse experts from all parts of the world."/>
     </head>      
-    <InnerHero pagebanner="public/images/banners/careers.webp" pagetitle="Careers" pagedescription="You might just be the employee we’ve been looking for! Browse through our selection of job vacancies and apply to be part of the family."/>
+    <InnerHero pagebanner="images/banners/careers.webp" pagetitle="Careers" pagedescription="You might just be the employee we’ve been looking for! Browse through our selection of job vacancies and apply to be part of the family."/>
     <section class="relative -mt-40">
       <JobsList sectionid="jobs-openings" sectiontitle="Job Openings" sectiondescription="Stay informed with the latest insights, trends, and developments in industrial automation.
       Explore our blog for thought-provoking articles, expert opinions, and practical tips to help

@@ -44,7 +44,7 @@ const locations = [
       <title>AITS - Contact Us Today</title>
       <meta name="description" content="Would you like to get in touch? Fill out the contact form with any inquiries you have and one of our AITS experts will respond as soon as possible."/>
     </head>
-    <InnerHero pagebanner="public/images/banners/contect.webp" pagetitle="Contact" pagedescription="Get in touch to learn more about our industry software solutions, digital services and how you can take your business a step further!"/>
+    <InnerHero pagebanner="images/banners/contect.webp" pagetitle="Contact" pagedescription="Get in touch to learn more about our industry software solutions, digital services and how you can take your business a step further!"/>
     <div class="relative">
         <ContactForm/>
         <TextGrid sectiontitle="Office Location" :data="locations"/>

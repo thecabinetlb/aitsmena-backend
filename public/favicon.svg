@@ -1,9 +1,9 @@
-<svg width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect width="26" height="21" fill="url(#pattern0_609_288)"/>
-<defs>
-<pattern id="pattern0_609_288" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image0_609_288" transform="scale(0.0384615 0.047619)"/>
-</pattern>
-<image id="image0_609_288" width="26" height="21" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAVCAYAAABYHP4bAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPiSURBVHgBlVVBbxpHFH4zy+5iGRNw1YsPLT1ZqloJlMrh0ohU6p3cWwtayapPxqeqbazFSZRWvRifLEuWAKuuews91ofCzanjA1F/QFaVWiNfvI7AZtmdmb4ZAgYH22TRMsC8ed973/e9hcBbXMmvfrKobuaE7wPzvMLB9ver457Vxg2UIGY4mg+GwkGiBYKC+amZjz4l/76o1sY5T8YJSmZ+jBmh8Etz6hYILkAIDt55C9rNV45w2b3nv/5QvykHHQMHiG5UzdAt4IwhZR1AJNB0A3TDjIAOa+PkuJG6ZOaJNRF5J001DTqtJgK1HYrUAemSIXwWm/n47o0UXgsUR8pMc6JiYDd++xzc1itc3W80w3iBOCkQoLoTnKdmPvzs9//+/rNxVa5rqTMJqaI2IJgHnbMmcN+ro9PKlLYLnPl1gSAEO6WBANILxetyXQk0N//E0oMTMUJpl7KOC5R49+VerbDs8I67LDhTsTKGUC0+N/8of1W+kdRJygKaVjEnQ8oAnfOm7Gr1r7JV6cX8c/iH/d7tz6OoVVJICpUbRerdxN1yo15zxurIEKIa0E2QGkgbI2X2wfZK/nJcoA15LMTutkVUZ4YIPB2V8w2gufnHFg5kTPLuddrKzkjZvVGHayWkkPlZaQiiXChvGr/z5ePc5dihgY1n8jFDGC810wRN08F3Ech3159vr6iDGxsbsWg0Wpydnb2fSCT69Nz5+uenlNC01IxzLl0IHvU+qJfy9siOdK5XlbD48j0X9fFtr8MKvf3p6eklwzBSZ2dnQxW7TM9ywZ1e5bI5nQ9T2Af6ZP6hhe0rlwk0AOqCGrF8/bduVbu7u7FIJJLTdezU9629vb1472wdKRRMZC84Um9I4cPcEJCkjADNK57RAIz5SDsroQHKvcDJycm1qakp9ZlhIeFweOjRc1D6toKU1dQQKygCHMiazN0H0plWJa/l4gJng3NbI6z/F7Czs5NBoLSGwyk1aLfbysr7+/upQTDMkEWTX1gbC9c5VRRSSRmuClVOuqKNifVnA0KGQiELtVGdyLvVaoHjOIBaFavVaqQX96z0nc2Br0KvLZWUKAopESSjvkP38Y9glcOdB30DoDZWMBiMua4LjUbDPj09zSGQXOHk5CR2fHw8ZIzD0oMC/pXUxAAYUmhduE6ON94BjS33fioWizFc8rL6o6OjVUyeyGaz61hMotlsruMtaVzCuMggmKap2XJUzm5umyRRLJ9pSlgqoHzwy0r/MbO1tVWilL6P3WQXFxdtuHTJuULd5FlnYWEhO7h3+4tHaZRoSe4NFj/ywkQpGOPa3NxM3xTzPxfy9v+gWmNCAAAAAElFTkSuQmCC"/>
-</defs>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
+    <path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
+    <style>
+        path { fill: #000; }
+        @media (prefers-color-scheme: dark) {
+            path { fill: #FFF; }
+        }
+    </style>
 </svg>

@@ -45,7 +45,7 @@ onMounted(() => {
     <h1 class="font-[200] text-accent1 2xl:text-6xl lg:text-5xl md:text-4xl text-[30px] uppercase mb-6">{{ sectiontitle }}</h1>
     <p class="tracking-wide text-accent2 font-[200] max-sm:text-[14px] text-justify mb-6" :class="{'hyphens-auto' : hyphen}">{{ sectiondescription }}</p>
     <!-- <div class="cursor-pointer px-4 py-3 w-fit max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125 mt-auto mb-0"> Browse All </div>              -->
-    <!-- <a id="'go-to-blogs-page'" aria-label="go to blog page" :href="'/resources/' + sectionid" class="block cursor-pointer px-4 py-3 w-fit max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125 mt-auto mb-0">Browse All</a> -->
+    <a id="'go-to-blogs-page'" aria-label="go to blog page" :href="'/resources/' + sectionid" class="block cursor-pointer px-4 py-3 w-fit max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125 mt-auto mb-0">Browse All</a>
   </div>
     <div class="relative w-full mx-auto lg:w-5/12">
       <Carousel

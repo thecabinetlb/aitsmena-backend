@@ -27,14 +27,14 @@ const missionandvission =
   {
     title: "A Vision In Sight",
     description: "AITS strives to be the leading industrial software innovator in the Gulf region. How? By delivering cutting-edge software solutions and digital services, digital threads, and connected workers. It takes a thrill for innovation and excellence to empower organizations in reaching new heights of success.",
-    image: "/images/hero/missionandvision/vision_v1.webp",
+    image: "images/hero/missionandvision/vision_v1.webp",
 }
 const valuesandcommitments =
 {
   title: "You Have",
   title2: "Our Word",
   description: "No company can operate without a set of core values that shape its culture and defines who it is. As for us? We believe in integrity, collaboration, and continuous improvement. Our commitment to enhance positive transformation in the industrial landscape creates an environment where our dedicated team can thrive. This enables us to better serve our clients and contribute to a brighter, more sustainable future.",
-  image: "/images/hero/values/values_v1.webp",
+  image: "images/hero/values/values_v1.webp",
 }  
   
 </script>

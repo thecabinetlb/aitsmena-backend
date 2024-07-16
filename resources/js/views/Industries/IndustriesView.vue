@@ -27,7 +27,7 @@ icon:'/images/industries/Mining.svg' },
       <title>AITS - The Various Industries We Serve</title>
       <meta name="description" content="We provide solutions to Smart Cities, F&B, Manufacturing, Oil&Gas, Energy, and Utilities. Interested? Let's get started!"/>
     </head>        
-    <InnerHero pagebanner="public/images/banners/industries.webp" pagetitle="Industries"
+    <InnerHero pagebanner="images/banners/industries.webp" pagetitle="Industries"
         pagedescription="From Smart Cities to Food and Beverage, Energy, Transportation, and much more, AITS offers tailored industrial software solutions and digital services to meet your unique needs in various industries. Discover how our industry-specific solutions and services can drive success for your business."/>
         <section class="relative">
             <IndustriesGrid :data="industries"/>

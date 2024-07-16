@@ -35,7 +35,7 @@ const partners = [
       <title>AITS - About Us</title>
       <meta name="description" content="Powered by IBI, AITS plays a pivotal role in driving positive transformation across various industrial sectors. Explore our added value to diverse industries."/>
     </head>        
-    <InnerHero pagebanner="public/images/banners/about.webp" isAbout="true" 
+    <InnerHero pagebanner="images/banners/about.webp" isAbout="true" 
       pagedescription="Do you need a trusted software company and strategic ally in navigating the complex landscape of industrial automation? You’re in the right place. AITS is powered by IBI Holding, an investment company that fuels innovation in businesses across various industries and actively seeks partnerships with companies and individuals who are driving transformation in today’s dynamic market. AITS plays a pivotal role in driving positive transformation across various industrial sectors. Explore our added value to diverse industries, compelling employee propositions, and available job vacancies."/>
       <section class="relative">
           <Partners sectionid="sub-companies" sectiondescription="Our portfolio holds two distinguished business lines: AVEVA Select Gulf and IC2. Together, we offer a comprehensive suite of solutions designed to address the diverse challenges faced by today's industries." :data="partners"/>
