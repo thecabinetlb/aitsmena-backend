@@ -1,1 +1,0 @@
-<header-component></header-component>
