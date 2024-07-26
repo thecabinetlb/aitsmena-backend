@@ -1,0 +1,48 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-BJL_Un0K.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-rQHVA0Y4.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/components/ContactForm.vue",
+      "resources/js/components/PostsCarousel.vue"
+    ],
+    "css": [
+      "assets/app-MT3FmEmh.css"
+    ],
+    "assets": [
+      "assets/Aktifo-A-Book-BT1P3luM.woff2"
+    ]
+  },
+  "resources/js/assets/fonts/Aktifo/Aktifo-A-Book.woff2": {
+    "file": "assets/Aktifo-A-Book-BT1P3luM.woff2",
+    "src": "resources/js/assets/fonts/Aktifo/Aktifo-A-Book.woff2"
+  },
+  "resources/js/components/ContactForm.vue": {
+    "file": "assets/ContactForm-B8LWBEHE.js",
+    "name": "ContactForm",
+    "src": "resources/js/components/ContactForm.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/components/PostsCarousel.vue": {
+    "file": "assets/PostsCarousel-B7C6o9ax.js",
+    "name": "PostsCarousel",
+    "src": "resources/js/components/PostsCarousel.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/PostsCarousel-DsEdXrlw.css"
+    ]
+  }
+}
