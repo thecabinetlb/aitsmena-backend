@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import laravel, { refreshPaths } from 'laravel-vite-plugin'; 
+import laravel from 'laravel-vite-plugin'; 
 import vue from '@vitejs/plugin-vue'; 
 
 export default defineConfig({
@@ -21,9 +21,5 @@ export default defineConfig({
         alias: {
             vue: 'vue/dist/vue.esm-bundler.js',
         },
-    }, 
-    refresh: [ 
-        ...refreshPaths,
-        'app/Http/Livewire/**',
-    ], 
+    }
 });
