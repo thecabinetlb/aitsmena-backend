@@ -1,0 +1,1 @@
+layout<footer-layout></footer-layout>

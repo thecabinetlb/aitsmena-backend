@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <home-view></home-view>
+<blog-post-details-view></blog-post-details-view>
 @endsection
