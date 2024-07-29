@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\BlogPost;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +38,13 @@ Route::get('/resources', function () {
 Route::get('/resources/blog', function () {
     return view('resources/blog/index');
 });
-Route::get('/rousources/blog/{slug}', function ($slug) {
-    return view('rousources/blog.show', ['slug' => $slug]);
+Route::get('/resources/blog/{slug}', function ($slug) {
+    // Find the blog post by slug
+    $blogpost = BlogPost::where('slug', $slug)->first();
+
+    if (!$blogpost) {
+        abort(404); // Return a 404 response if the blog post is not found
+    }
+
+    return view('resources/blog.show', ['blogpost' => $blogpost]);
 });

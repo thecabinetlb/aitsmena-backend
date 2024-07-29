@@ -1,13 +1,11 @@
 <script setup>
 defineProps({
     sectiontitle: String,
-    title: String,
-    industry: String,
     item: String,
 })
 </script>
 <template>
-    <section class="w-11/12 py-40 mx-auto 2xl:w-8/12 lg:w-10/12">
+    <section class="w-11/12 py-40 mx-auto 2xl:w-8/12 lg:w-10/12 text-accent2">
         <h1 class="text-accent1 font-[200] text-lg uppercase">{{sectiontitle}}</h1>
         <hr class="w-full h-4 mt-3 text-accent2"/>
         <div class="flex flex-col gap-3 mt-10">
@@ -15,7 +13,7 @@ defineProps({
             <!-- <img :src="image" :alt="title" width="391" height="290" center cover responsive loading="eager"/>-->
             <h1 class="font-[200] text-accent1 2xl:text-6xl lg:text-5xl md:text-4xl text-[30px]">{{ item.title }}</h1>
             <h3 class="text-accent2 font-[200] max-sm:text-[14px]">{{ item.date }}</h3>
-            <p class="tracking-wide text-accent2 font-[200] max-sm:text-[14px] text-justify mb-6">{{ item.body }}</p>
+           {{ item.body }}
         </div>
     </section>
 </template>

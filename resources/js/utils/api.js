@@ -109,3 +109,23 @@ export function getSuccessStories (){
     let blogs = getBlogPosts();
     return blogs.filter(blog => blog.is_featured === true);
   }
+
+  // export async function getBlogPostBySlug(slug) {
+  //     let data = []
+  //     console.log("data", data)
+  //     const axios = (await import("axios")).default;
+  //     await axios.get('/api/v1/blog-posts/' + slug, {
+  //       headers: {
+  //         'Cache-Control': 'max-age=3600', // Cache for 1 hour
+  //       },
+  //     })
+  //     .then(res => {
+  //       console.log("res", res)
+  //       data = res.data;
+  //     })
+  //     .catch((error) => {
+  //       console.log(error)
+  //       data=[]
+  //     })
+  //   return data;
+  // } 
