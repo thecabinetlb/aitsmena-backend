@@ -1,5 +1,4 @@
 <script setup>
-import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 const navlinks = [
   { id: 1, name: 'Home', to: '/' },
@@ -52,27 +51,27 @@ const toggleOpen = () => {
 <template>
   <header class="fixed left-1/2 transform bg-bg/90 -translate-x-1/2 top-0 h-[67px] z-[9] 2xl:w-8/12 lg:w-10/12 w-11/12 lg:flex justify-between items-center mx-auto px-6 rounded-b-[16px]" 
     :class="{'h-fit' : isOpen}">
-    <RouterLink id="Home" aria-label="go to home" to="/">
+    <a id="Home" aria-label="go to home" href="/">
       <img src="/AITSLogoWithSloganBig.webp" alt="AITS - An IBI Company" width="164" height="43" cover center responsive loading="eager" class="max-lg:my-[20px] -ms-4"/>    
-    </RouterLink>
+    </a>
     <!-- Desktop -->
     <nav class="items-center justify-end hidden w-8/12 h-full gap-2.5 lg:flex">
       <div v-for="(item, key) in navlinks" :key="key" class="relative">
-        <RouterLink :id="item.name + (openSubMenu === item.id ? '-active' : '')" :aria-label="'go to ' + item.name" :to="item.to" 
+        <a :id="item.name + (openSubMenu === item.id ? '-active' : '')" :aria-label="'go to ' + item.name" :href="item.to" 
         :activeClass="'bg-gradient-to-r from-accent1/10 to-accent1/20 backdrop-blur-[16px] rounded-[8px]'"
         :exactActiveClass="'bg-gradient-to-r from-accent1/10 to-accent1/20 backdrop-blur-[16px] rounded-[8px]'"
         class="py-2 px-3 cursor-pointer text-lg font-[400] text-accent1 hover:bg-gradient-to-r hover:from-accent1/10 hover:to-accent1/20 hover:backdrop-blur-[16px] hover:rounded-[8px]"
         @mouseenter="openSubMenu = item.id, hasSubMenu = item.submenu ? true : false">
           {{ item.name }}
-        </RouterLink>
+        </a>
         <nav v-if="hasSubMenu && openSubMenu === item.id" class="w-[290px] h-fit absolute left-0 top-[50px] p-6 rounded-[16px] bg-bg/90"
         @mouseleave="hasSubMenu = false">
           <div v-for="(subitem, subkey) in item.submenu" :key="subkey" class="hover:text-accent1/70 cursor-pointer font-[400] text-accent1 text-lg pb-3 drop-shadow-md"  
           @click="isClicked = subitem.id">
-            <RouterLink :id="subitem.name + (isClicked === subitem.id ? '-active' : '')" :aria-label="'go to ' + subitem.name" :to="subitem.to"
+            <a :id="subitem.name + (isClicked === subitem.id ? '-active' : '')" :aria-label="'go to ' + subitem.name" :href="subitem.to"
             :class="{'text-accent1/70' : isClicked === subitem.id}">
               {{ subitem.name }}
-            </RouterLink>            
+            </a>            
           </div>
         </nav>
       </div> 
@@ -88,17 +87,17 @@ const toggleOpen = () => {
     </button>
     <nav v-if="isOpen" class="w-full py-5 mt-5 space-y-4 lg:hidden">
       <div v-for="(item, key) in navlinks" :key="key">
-        <RouterLink :id="item.name + (isClicked === item.id ? '-active' : '')" :aria-label="'go to ' + item.name" :to="item.to" class="cursor-pointer font-[400] text-accent1 drop-shadow-md"
+        <a :id="item.name + (isClicked === item.id ? '-active' : '')" :aria-label="'go to ' + item.name" :href="item.to" class="cursor-pointer font-[400] text-accent1 drop-shadow-md"
         :activeClass="'text-accent1/70'"
         :exactActiveClass="'text-accent1/70'"
         @click="toggleSubMenu(item)">
           {{ item.name }}
-        </RouterLink>
+        </a>
         <nav v-if="hasSubMenu && openSubMenu === item.id" class="mt-3 w-full p-4 rounded-[16px] bg-bg/70">
             <div v-for="(subitem, subkey) in item.submenu" :key="subkey" class="hover:text-accent1/70 cursor-pointer font-[400] text-accent1 pb-3 drop-shadow-md">
-              <RouterLink :id="subitem.name + (isClicked === subitem.id ? '-active' : '')" :aria-label="'go to ' + subitem.name" :to="subitem.to"        
+              <a :id="subitem.name + (isClicked === subitem.id ? '-active' : '')" :aria-label="'go to ' + subitem.name" :href="subitem.to"        
               @click="isClicked = subitem.id, isOpen = null"
-            :class="{'text-accent1/70' : isClicked === subitem.id}">{{ subitem.name }}</RouterLink>
+            :class="{'text-accent1/70' : isClicked === subitem.id}">{{ subitem.name }}</a>
             </div>
         </nav>
       </div>

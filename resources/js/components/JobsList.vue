@@ -1,5 +1,4 @@
 <script setup>
-import { RouterLink } from 'vue-router'
 defineProps({
     sectionid: String,
     sectiontitle: String,
@@ -24,7 +23,7 @@ defineProps({
                         <h2 class="2xl:text-2xl lg:text-xl sm:text-lg text-accent1 font-[500] mb-3">{{ item?.title }}</h2>
                         <p class="tracking-wide text-accent2 font-[200] max-sm:text-[14px] text-justify">{{ item?.location }}</p>
                     </div>
-                    <RouterLink :id="'go-to-' + item?.title + '-page'" :aria-label="'apply for' + item?.title" :to="item?.to" :target="item?.target" class="cursor-pointer px-4 py-3 mt-auto mb-0 w-fit block max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125">Apply</RouterLink>
+                    <a :id="'go-to-' + item?.title + '-page'" :aria-label="'apply for' + item?.title" :href="item?.to" :target="item?.target" class="cursor-pointer px-4 py-3 mt-auto mb-0 w-fit block max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125">Apply</a>
                 </div>
             </li>
         </ul>

@@ -42,7 +42,7 @@ const filterData = (key) => {
           <!-- <ul v-for="(listitem, key) in filterdata.initiatives" :key="key" class="list-style-none">
             <li class="text-accent2 font-[200] max-sm:text-[14px] text-justify">{{ listitem }}</li>
           </ul> -->
-          <!-- <RouterLink v-if="item.to" :id="'go-to-' + item.title + '-page'" :aria-label="'go to ' + item.title" :to="item.to" class="cursor-pointer px-4 py-3 w-fit block max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125">Browse</RouterLink> -->
+          <!-- <a v-if="item.to" :id="'go-to-' + item.title + '-page'" :aria-label="'go to ' + item.title" :to="item.to" class="cursor-pointer px-4 py-3 w-fit block max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125">Browse</a> -->
         </div>
       </div>
     </section>

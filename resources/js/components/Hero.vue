@@ -5,7 +5,7 @@
       <h1 class="text-accent1 uppercase 2xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl text-[30px] text-center font-[700]">Welcome to AITS</h1>
       <p class="tracking-wide font-[200] max-sm:text-[14px] text-justify text-accent2 2xl:w-[680px] 2xl:px-0 sm:w-2/3 px-6" style="text-align-last: center;">
         Looking for a trusted industrial software partner? AITS empowers people like you to thrive through innovative tech solutions tailored to your unique needs. </p>
-      <!-- <RouterLink id="go-to-contact-page" aria-label="go to contact page" to="/contact" class="relative z-[4] block w-fit cursor-pointer px-4 py-3 max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125">Get Started</RouterLink> -->
+      <!-- <a id="go-to-contact-page" aria-label="go to contact page" to="/contact" class="relative z-[4] block w-fit cursor-pointer px-4 py-3 max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125">Get Started</a> -->
       <img src="images/hero/arrow.webp" alt="AITS" width="178" height="145" center cover responsive  loading="eager" class="w-[100px] max-md:w-[50px]"
       v-motion  
         :initial="{

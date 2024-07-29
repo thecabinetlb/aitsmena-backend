@@ -1,5 +1,4 @@
 <script setup>
-import { RouterLink } from 'vue-router'
 const footerlinks = [
   { id: 1, 
     name: 'Quick Links',
@@ -54,9 +53,9 @@ const sociallinks = [
               <p class="tracking-wide text-accent2 font-[200] max-sm:text-[14px] text-justify">Stay connected with AITS on social media for the latest updates, news, and insights. Follow
               us on LinkedIn, Twitter, Facebook, and Instagram to join the conversation and stay informed.</p>
               <div class="relative z-[2] flex items-center gap-2">
-                <RouterLink v-for="(item, key) in sociallinks" :key="key" :id="'go-to-' + item.name" :to="item.to" :target="item.target" class="w-8 aspect-square font-[200] bg-bg2 text-accent1 hover:brightness-125 rounded-[8px] p-2 flex items-center justify-center">
+                <a v-for="(item, key) in sociallinks" :key="key" :id="'go-to-' + item.name" :href="item.to" :target="item.target" class="w-8 aspect-square font-[200] bg-bg2 text-accent1 hover:brightness-125 rounded-[8px] p-2 flex items-center justify-center">
                     <img :src="item.icon" :alt="'AITS' + item.name" center cover responsive class="w-full h-full" loading="lazy"/>
-                </RouterLink>
+                </a>
               </div>
             </div>
             <ul role="list" class="flex flex-wrap justify-between w-full lg:w-7/12 gap-y-3 list-style-none">
@@ -65,9 +64,9 @@ const sociallinks = [
                     {{ item.name }}
                 </h1>            
                 <div v-for="(subitem, subkey) in item.submenu" :key="subkey" class="pb-3">
-                    <RouterLink :id="subitem.name" :aria-label="'go to ' + subitem.name" :to="item.to + subitem?.to" 
+                    <a :id="subitem.name" :aria-label="'go to ' + subitem.name" :href="item.to + subitem?.to" 
                     class="font-[200] text-accent1 hover:brightness-75 max-sm:text-[14px]">
-                    {{ subitem.name }}</RouterLink>
+                    {{ subitem.name }}</a>
                 </div>                
               </li>
             </ul>
