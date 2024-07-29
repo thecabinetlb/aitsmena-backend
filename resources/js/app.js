@@ -1,4 +1,5 @@
 import './assets/css/index.css';
+import axios from 'axios'
 
 import { createApp } from 'vue';
 import { createHead } from '@unhead/vue';
@@ -36,10 +37,17 @@ app.component('blog-post-details-view', BlogPostDetailsView);
 
 app.use(head);
 app.use(MotionPlugin);
-app.use(VueRecaptchaPlugin, {
-  v2SiteKey: '6LcX3AsqAAAAAKG0sYoZ3G3oQxqvLE8VeXHfnN_P',
+// app.use(VueRecaptchaPlugin, {
+//   v2SiteKey: '6LcX3AsqAAAAAKG0sYoZ3G3oQxqvLE8VeXHfnN_P',
+// });
+// Configure VueRecaptchaPlugin
+let siteKey = '';
+axios.get('/api/v1/recaptcha-config').then(response => {
+  siteKey = response.data.v2SiteKey;
+  app.use(VueRecaptchaPlugin, {
+    v2SiteKey: siteKey,
+  });
 });
-
 app.use(router);
 
 app.mount('#app');

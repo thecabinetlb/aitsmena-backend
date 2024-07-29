@@ -46,3 +46,9 @@ Route::get('whitepapers/featured', [WhitepaperController::class, 'getFeatured'])
 Route::get('whitepapers/arabic', [WhitepaperController::class, 'getArabic']);
 Route::get('whitepapers/gated', [WhitepaperController::class, 'getGated']);
 Route::get('whitepapers/not-gated', [WhitepaperController::class, 'getNoteGated']);
+
+Route::get('/recaptcha-config', function () {
+    return response()->json([
+        'v2SiteKey' => env('RECAPTCHAV2_SITEKEY'),
+    ]);
+});
