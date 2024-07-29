@@ -6,7 +6,6 @@ import { MotionPlugin } from '@vueuse/motion';
 import { VueRecaptchaPlugin } from 'vue-recaptcha/head';
 import router from './router/index';
 
-
 import Header from './components/layouts/Header.vue'
 import Footer from './components/layouts/Footer.vue'
 
