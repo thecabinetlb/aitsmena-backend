@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
     sectiontitle: String,
-    item: String,
+    item: Object,
 })
 </script>
 <template>

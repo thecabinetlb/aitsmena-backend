@@ -5,7 +5,7 @@ import { useRoute } from 'vue-router'
 import { ref, onMounted } from 'vue';
 
 const route = useRoute()
-const blogpost = ref([]);
+const blogpost = ref({});
 
 const fetchBlogPost = async () => {
   blogpost.value = await getBlogPostBySlug(route.params.slug);
