@@ -7,7 +7,6 @@
     <link rel="icon" type="image/png" href="/aits.png"/>
     @vite(['resources/js/app.js', 'resources/css/app.css'])
     <!--preload-links-->
-    <link rel="preload" fetchpriority="high" as="font" href="./src/assets/fonts/Aktifo/Aktifo-A-Book.woff2" type="font/woff2" crossorigin="anonymous">
 </head>
 <body class="font-body bg-bg">
     <div id="app">

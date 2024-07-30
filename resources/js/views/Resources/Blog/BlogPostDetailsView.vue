@@ -7,13 +7,9 @@ import { ref, onMounted } from 'vue';
 const route = useRoute()
 const blogpost = ref({});
 
-const fetchBlogPost = async (slug) => {
-  blogpost.value = await getBlogPostBySlug(slug);
-};
-
 onMounted(() => {
   if(route.params.slug){
-    fetchBlogPost(route.params.slug);
+    getBlogPostBySlug(route.params.slug);
   }
 });
 console.log("slug", route.params.slug)

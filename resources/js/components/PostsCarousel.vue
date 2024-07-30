@@ -45,7 +45,7 @@ onMounted(() => {
     <h1 class="font-[200] text-accent1 2xl:text-6xl lg:text-5xl md:text-4xl text-[30px] uppercase mb-6">{{ sectiontitle }}</h1>
     <p class="tracking-wide text-accent2 font-[200] max-sm:text-[14px] text-justify mb-6" :class="{'hyphens-auto' : hyphen}">{{ sectiondescription }}</p>
     <!-- <div class="cursor-pointer px-4 py-3 w-fit max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125 mt-auto mb-0"> Browse All </div>              -->
-    <!-- <a id="'go-to-blogs-page'" aria-label="go to blog page" :href="'/resources/' + sectionid" class="block cursor-pointer px-4 py-3 w-fit max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125 mt-auto mb-0">Browse All</a> -->
+    <a id="'go-to-blogs-page'" aria-label="go to blog page" :href="'/resources/' + sectionid" class="block cursor-pointer px-4 py-3 w-fit max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125 mt-auto mb-0">Browse All</a>
   </div>
     <div class="relative w-full mx-auto lg:w-5/12">
       <Carousel
@@ -53,8 +53,7 @@ onMounted(() => {
         :wrap-around="true"
         class="w-full h-full maskleft">
           <Slide v-for="(item, key) in data" :key="key" class="rounded-[16px] md:aspect-square border-2 border-bg2 my-10">
-            <!-- image should go here -->
-            <div class="w-full h-40 bg-gradient-to-t from-[#1E364D] to-[#1E364D]/10 rounded-t-[16px]"></div>
+            <img :src="item.thumbnail" :alt="item.title" center cover responsive loading="eager" class="aspect-video bg-gradient-to-t from-[#1E364D] to-[#1E364D]/10 rounded-t-[16px]"/>
             <div class="flex flex-col gap-3 p-6 lg:gap-6">
               <!-- <h3 class="text-accent2 font-[200] max-sm:text-[14px]">{{ item.published_at }}</h3> -->
               <h2 class="text-accent1 font-[400] sm:text-lg sm:min-h-[56px] min-h-[56px]">{{ item.title }}</h2>
