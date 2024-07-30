@@ -27,7 +27,7 @@ Route::get('contact', [ContactController::class, 'index']);
 
 Route::get('blog-posts', [BlogPostController::class, 'index']);
 Route::get('blog-posts/{slug}', [BlogPostController::class, 'getBySlug']);
-Route::get('blog-posts/featured', [BlogPostController::class, 'getFeatured']);
+Route::get('featured-blog-posts', [BlogPostController::class, 'getFeatured']);
 Route::get('blog-posts/arabic', [BlogPostController::class, 'getArabic']);
 
 Route::get('industry-insights', [IndustryInsightController::class, 'index']);

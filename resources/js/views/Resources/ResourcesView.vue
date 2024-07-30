@@ -1,14 +1,25 @@
 <script setup>
 // import banner from 'images/banners/resources.webp'
-import InnerHero from '../../components/InnerHero.vue';
-import InsideBody from '../../components/InsideBody.vue';
-import { getFeaturedBlogPosts } from '../../utils/api'
-import OneImageTextFlex from '../../components/OneImageTextFlex.vue';
+import InnerHero from '../../components/InnerHero.vue'
+import InsideBody from '../../components/InsideBody.vue'
+import { getFeaturedBlogPosts } from '../../utils/api_functions'
+import OneImageTextFlex from '../../components/OneImageTextFlex.vue'
 import { defineAsyncComponent } from 'vue'
 const PostsCarousel = defineAsyncComponent(() =>
   import('../../components/PostsCarousel.vue')
 )
-const blogposts = getFeaturedBlogPosts()
+import { ref, onMounted } from 'vue';
+
+const blogposts = ref([]);
+console.log('blogposts', blogposts)
+const fetchBlogPosts = async () => {
+  blogposts.value = await getFeaturedBlogPosts();
+};
+
+onMounted(() => {
+  fetchBlogPosts();
+});
+
 const whitepaper ={ 
     id: 1, 
     title: 'Explore Our Whitepapers', 

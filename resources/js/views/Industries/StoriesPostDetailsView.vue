@@ -1,6 +1,6 @@
 <script setup>
 import PostDetails from '../../components/PostDetails.vue'
-import { getSuccessStoryBySlug } from '../../utils/api'
+import { getSuccessStoryBySlug } from '../../utils/api_functions'
 import { useRoute } from 'vue-router'
 import { ref,onMounted } from 'vue'
 

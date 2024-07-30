@@ -38,6 +38,6 @@ Route::get('/resources', function () {
 Route::get('/resources/blog', function () {
     return view('resources/blog/index');
 });
-Route::get('/{vue_capture?}', function () {
-    return view('resources/blog.show');
-})->where('vue_capture', '[\/\w\.-]*');
+Route::get('/resources/blog/{slug}', function ($slug) {
+    return view('resources/blog.show', ['slug' => $slug]);
+});

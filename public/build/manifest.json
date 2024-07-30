@@ -5,7 +5,7 @@
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-rQHVA0Y4.js",
+    "file": "assets/app-CyQCNHYi.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -25,7 +25,7 @@
     "src": "resources/js/assets/fonts/Aktifo/Aktifo-A-Book.woff2"
   },
   "resources/js/components/ContactForm.vue": {
-    "file": "assets/ContactForm-B8LWBEHE.js",
+    "file": "assets/ContactForm-BKm2nKhx.js",
     "name": "ContactForm",
     "src": "resources/js/components/ContactForm.vue",
     "isDynamicEntry": true,
@@ -34,7 +34,7 @@
     ]
   },
   "resources/js/components/PostsCarousel.vue": {
-    "file": "assets/PostsCarousel-B7C6o9ax.js",
+    "file": "assets/PostsCarousel-5AEspINF.js",
     "name": "PostsCarousel",
     "src": "resources/js/components/PostsCarousel.vue",
     "isDynamicEntry": true,
@@ -42,7 +42,7 @@
       "resources/js/app.js"
     ],
     "css": [
-      "assets/PostsCarousel-DsEdXrlw.css"
+      "assets/PostsCarousel-BNA3ABhC.css"
     ]
   }
 }

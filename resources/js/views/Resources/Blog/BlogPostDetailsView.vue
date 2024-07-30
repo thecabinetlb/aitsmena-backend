@@ -1,18 +1,20 @@
 <script setup>
 import PostDetails from '../../../components/PostDetails.vue'
-import { getBlogPostBySlug } from '../../../utils/api'
+import { getBlogPostBySlug } from '../../../utils/api_functions'
 import { useRoute } from 'vue-router'
 import { ref, onMounted } from 'vue';
 
 const route = useRoute()
 const blogpost = ref({});
 
-const fetchBlogPost = async () => {
-  blogpost.value = await getBlogPostBySlug(route.params.slug);
+const fetchBlogPost = async (slug) => {
+  blogpost.value = await getBlogPostBySlug(slug);
 };
 
 onMounted(() => {
-  fetchBlogPost();
+  if(route.params.slug){
+    fetchBlogPost(route.params.slug);
+  }
 });
 console.log("slug", route.params.slug)
 </script>

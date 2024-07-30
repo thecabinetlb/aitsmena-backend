@@ -1,6 +1,4 @@
 <script setup>
-import { RouterLink } from 'vue-router';
-
 defineProps({
     category: String,
     sectiontitle: String,
@@ -18,10 +16,10 @@ defineProps({
                 <!-- image should go here -->
                 <div class="w-full h-40 bg-gradient-to-t from-[#1E364D] to-[#1E364D]/10 rounded-t-[16px]"></div>
                 <div class="flex flex-col gap-3 p-6 lg:gap-6">
-                    <h3 class="text-accent2 font-[200] max-sm:text-[14px]">{{ item.date }}</h3>
+                    <h3 class="text-accent2 font-[200] max-sm:text-[14px]">{{ item.published_at }}</h3>
                     <h2 class="text-accent1 font-[400] sm:text-lg">{{ item.title }}</h2>
                     <p class="tracking-wide hyphens-auto text-accent2 font-[200] max-sm:text-[14px] text-justify">{{ item.summary }}</p>
-                    <RouterLink :id="'go-to-' + item.title + '-page'" :aria-label="'read more about' + item.title" :to="'/resources/' + category + '/' + item.slug" class="cursor-pointer px-4 py-3 mt-auto mb-0 ms-auto me-0 w-fit block max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125">Read More</RouterLink>
+                    <a :id="'go-to-' + item.title + '-page'" :aria-label="'read more about' + item.title" :href="'/resources/' + category + '/' + item.slug" class="cursor-pointer px-4 py-3 mt-auto mb-0 ms-auto me-0 w-fit block max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125">Read More</a>
                 </div>
             </li>
         </ul>

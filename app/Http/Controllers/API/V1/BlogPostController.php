@@ -19,9 +19,9 @@ class BlogPostController extends Controller
         return response()->json($post);
     }
 
-    public function getFeatured(BlogPost $blogpost)
+    public function getFeatured()
     {
-        $featuredPosts = $blogpost->featured()->get();
+        $featuredPosts = BlogPost::featured()->get();
         return response()->json($featuredPosts);
     }
 
