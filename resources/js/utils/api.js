@@ -129,3 +129,13 @@ export function getSuccessStories (){
   //     })
   //   return data;
   // } 
+//   Route::get('/resources/blog/{slug}', function ($slug) {
+//     // Find the blog post by slug
+//     $blogpost = BlogPost::where('slug', $slug)->first();
+
+//     if (!$blogpost) {
+//         abort(404); // Return a 404 response if the blog post is not found
+//     }
+
+//     return view('resources/blog.show', ['blogpost' => $blogpost]);
+// });
