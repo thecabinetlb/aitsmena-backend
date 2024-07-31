@@ -123,7 +123,7 @@ class BlogPostResource extends Resource
             TextColumn::make('slug')->sortable(),
             ToggleColumn::make('is_featured')->label('Featured'),
             ToggleColumn::make('is_arabic')->label('In Arabic'),
-            TextColumn::make('created_at')
+            TextColumn::make('published_at')
             ->dateTime('M-d-Y')
             ->sortable()
             ->searchable(),

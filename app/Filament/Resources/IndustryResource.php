@@ -36,7 +36,7 @@ class IndustryResource extends Resource
             ->columns([
                 TextColumn::make('title')->sortable()->searchable(),
                 TextColumn::make('slug')->sortable(),
-                TextColumn::make('created_at')
+                TextColumn::make('published_at')
                 ->dateTime('M-d-Y')
                 ->sortable()
                 ->searchable(),

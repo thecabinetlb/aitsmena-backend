@@ -13,8 +13,12 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        \App\Models\BlogPost::factory(5)->create();
-        \App\Models\IndustryInsight::factory(5)->create();
+        $this->call([
+            CategorySeeder::class,
+            IndustrySeeder::class,
+            BlogPostSeeder::class,
+            IndustryInsightSeeder::class,
+        ]);
         \App\Models\SuccessStory::factory(5)->create();
         \App\Models\Whitepaper::factory(5)->create();
 

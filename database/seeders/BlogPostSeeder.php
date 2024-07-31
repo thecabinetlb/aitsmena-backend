@@ -16,7 +16,7 @@ class BlogPostSeeder extends Seeder
         $blogPosts = [
             [
                 'id' => 1,
-                'thumbnail' => url('/images/blog/thumbnails/two-colleagues-factory.webp'),
+                'thumbnail' => url('/storage/blog/thumbnails/two-colleagues-factory.webp'),
                 'title' => 'The Impact of Industrial Digitization on Manufacturing Efficiency',
                 'slug' => 'the-impact-of-industrial-digitization-on-manufacturing-efficiency',
                 'summary' => 'Explore how industrial digitization is revolutionizing manufacturing processes and improving efficiency.',
@@ -27,7 +27,7 @@ class BlogPostSeeder extends Seeder
             ],
             [
                 'id' => 2,
-                'thumbnail' => url('/images/blog/thumbnails/aerial-shot-downtown-los-angeles-night.webp'),
+                'thumbnail' => url('/storage/blog/thumbnails/aerial-shot-downtown-los-angeles-night.webp'),
                 'title' => 'Challenges and Opportunities in Industrial Digitization',
                 'slug' => 'challenges-and-opportunities-in-industrial-digitization',
                 'summary' => 'Discover the key challenges faced and opportunities unlocked by the adoption of industrial digitization technologies.',
@@ -38,7 +38,7 @@ class BlogPostSeeder extends Seeder
             ],
             [
                 'id' => 3,
-                'thumbnail' => url('/images/blog/thumbnails/experienced-operator-hard-hat.webp'),
+                'thumbnail' => url('/storage/blog/thumbnails/experienced-operator-hard-hat.webp'),
                 'title' => 'Implementing Industrial IoT for Smart Factories',
                 'slug' => 'implementing-industrial-iot-for-smart-factories',
                 'summary' => 'Learn how Industrial Internet of Things (IIoT) is transforming traditional factories into smart, connected environments.',
@@ -49,7 +49,7 @@ class BlogPostSeeder extends Seeder
             ],
             [
                 'id' => 4,
-                'thumbnail' => url('/images/blog/thumbnails/top-view-modern-operational-plant-producing-fiberglass-heavy-industry-machinery-metalworking-workshop-concept.webp'),
+                'thumbnail' => url('/storage/blog/thumbnails/top-view-modern-operational-plant-producing-fiberglass-heavy-industry-machinery-metalworking-workshop-concept.webp'),
                 'title' => 'Data Analytics in Industrial Digitization',
                 'slug' => 'data-analytics-in-industrial-digitization',
                 'summary' => 'Discover how data analytics is driving insights and optimizations in industrial processes through digitization initiatives.',
@@ -60,7 +60,7 @@ class BlogPostSeeder extends Seeder
             ],
             [
                 'id' => 5,
-                'thumbnail' => url('/images/blog/thumbnails/woman-engineer-posing-with-workers-metalworking-factory.webp'),
+                'thumbnail' => url('/storage/blog/thumbnails/woman-engineer-posing-with-workers-metalworking-factory.webp'),
                 'title' => 'Cybersecurity Considerations for Industrial Digitization',
                 'slug' => 'cybersecurity-considerations-for-industrial-digitization',
                 'summary' => 'Explore the importance of cybersecurity measures in safeguarding industrial digitization systems and infrastructure.',
@@ -71,7 +71,7 @@ class BlogPostSeeder extends Seeder
             ],
             [
                 'id' => 6,
-                'thumbnail' => url('/images/blog/thumbnails/two-women-medical-suits-working-conveyor.webp'),
+                'thumbnail' => url('/storage/blog/thumbnails/two-women-medical-suits-working-conveyor.webp'),
                 'title' => 'دور الذكاء الاصطناعي في أتمتة العمليات الصناعية',
                 'slug' => 'دور-الذكاء-الاصطناعي-في-الأتمتة-الصناعية',
                 'summary' => 'تعرف على كيفية تشغيل تقنيات الذكاء الاصطناعي للأتمتة والتحسين في العمليات الصناعية.',
@@ -82,7 +82,7 @@ class BlogPostSeeder extends Seeder
             ],
             [
                 'id' => 7,
-                'thumbnail' => url('/images/blog/thumbnails/abandoned-textile-factory-soviet-armenia.webp'),
+                'thumbnail' => url('/storage/blog/thumbnails/abandoned-textile-factory-soviet-armenia.webp'),
                 'title' => 'Digital Twin Technology in Industrial Applications',
                 'slug' => 'digital-twin-technology-in-industrial-applications',
                 'summary' => 'Discover how digital twin technology is enabling predictive maintenance and virtual simulations in industrial settings.',
