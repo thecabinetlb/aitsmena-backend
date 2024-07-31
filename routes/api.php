@@ -32,7 +32,7 @@ Route::get('blog-posts/arabic', [BlogPostController::class, 'getArabic']);
 
 Route::get('industry-insights', [IndustryInsightController::class, 'index']);
 Route::get('industry-insights/{slug}', [IndustryInsightController::class, 'getBySlug']);
-Route::get('industry-insights/featured', [IndustryInsightController::class, 'getFeatured']);
+Route::get('featured-industry-insights', [IndustryInsightController::class, 'getFeatured']);
 Route::get('industry-insights/arabic', [IndustryInsightController::class, 'getArabic']);
 
 Route::get('success-stories', [SuccessStoryController::class, 'index']);

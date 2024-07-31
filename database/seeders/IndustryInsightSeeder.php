@@ -35,7 +35,7 @@ class IndustryInsightSeeder extends Seeder
                 'summary' => 'Discover how innovative software solutions enhance quality control and compliance in the food & beverage sector.',
                 'body' => 'In the food & beverage industry, ensuring product quality and compliance with regulatory standards is crucial. Advanced software solutions streamline production processes, enhance quality control, and ensure traceability. These systems help companies meet consumer demands and regulatory requirements while minimizing waste and optimizing supply chain management.',
                 'published_at' => '2024-06-15',
-                'is_featured' => false,
+                'is_featured' => true,
                 'is_arabic' => false,
                 'category_id' => 2,
                 'industry_id' => 2, // Food & Beverage
@@ -61,7 +61,7 @@ class IndustryInsightSeeder extends Seeder
                 'summary' => 'Understand how digital solutions are optimizing operations and mitigating risks in the oil & gas industry.',
                 'body' => 'The oil & gas industry operates in a complex environment with volatile market conditions and stringent regulatory requirements. Tailored software solutions address unique challenges, from upstream exploration to downstream refining. Digital solutions enable data-driven decision-making, asset optimization, and predictive maintenance, enhancing operational efficiency and profitability.',
                 'published_at' => '2024-02-28',
-                'is_featured' => false,
+                'is_featured' => true,
                 'is_arabic' => false,
                 'category_id' => 2,
                 'industry_id' => 4, // Oil & Gas

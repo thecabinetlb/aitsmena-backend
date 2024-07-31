@@ -16,21 +16,21 @@ class IndustryInsightController extends Controller
         return IndustryInsight::all();
     }
 
-    public function getBySlug(IndustryInsight $indusryinsight)
+    public function getBySlug($slug)
     {
-        $post = IndustryInsight::where($indusryinsight->slug)->first();
+        $post = IndustryInsight::where('slug', $slug)->get();
         return response()->json($post);
     }
-    
+
     public function getByIndustry(Industry $industry)
     {
         $industryPosts = $industry->IndustryInsights()->get();
         return response()->json($industryPosts);    
     }
 
-    public function getFeatured(IndustryInsight $indusryinsight)
+    public function getFeatured()
     {
-        $featuredPosts = $indusryinsight->featured()->get();
+        $featuredPosts = IndustryInsight::featured()->get();
         return response()->json($featuredPosts);
     }
 
