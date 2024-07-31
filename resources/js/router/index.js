@@ -8,6 +8,8 @@ import ResourcesView from '../views/Resources/ResourcesView.vue'
 import StoriesPostDetailsView from '../views/Industries/StoriesPostDetailsView.vue'
 import BlogView from '../views/Resources/Blog/BlogView.vue'
 import BlogPostDetailsView from '../views/Resources/Blog/BlogPostDetailsView.vue'
+import IndustryInsightsView from '../views/Resources/IndustryInsights/IndustryInsightsView.vue'
+import IndustryInsightsPostDetailsView from '../views/Resources/IndustryInsights/IndustryInsightsPostDetailsView.vue'
 
 const routes = [
   { path: '/', component: HomeView},
@@ -17,7 +19,9 @@ const routes = [
   { path: '/careers', component: CareersView },
   { path: '/resources', component: ResourcesView },
   { path: '/resources/blog', component: BlogView },
-  { path: '/resources/blog/:slug', component: BlogPostDetailsView, props: true },
+  { path: '/resources/blog/:slug', component: BlogPostDetailsView },
+  { path: '/resources/industry-insights', component: IndustryInsightsView },
+  { path: '/resources/industry-insights/:slug', component: IndustryInsightsPostDetailsView },
   { path: '/industries/success-stories/:slug', component: StoriesPostDetailsView }
 ]
  

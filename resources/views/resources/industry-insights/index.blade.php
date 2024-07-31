@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <blog-view></blog-view>
+    <industry-insights-view></industry-insights-view>
 @endsection

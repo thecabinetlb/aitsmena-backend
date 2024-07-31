@@ -41,3 +41,9 @@ Route::get('/resources/blog', function () {
 Route::get('/resources/blog/{slug}', function ($slug) {
     return view('resources/blog.show', ['slug' => $slug]);
 });
+Route::get('/resources/industry-insights', function () {
+    return view('resources/industry-insights/index');
+});
+Route::get('/resources/industry-insights/{slug}', function ($slug) {
+    return view('resources/industry-insights.show', ['slug' => $slug]);
+});

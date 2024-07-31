@@ -19,6 +19,8 @@ import ResourcesView from './views/Resources/ResourcesView.vue';
 import StoriesPostDetailsView from './views/Industries/StoriesPostDetailsView.vue';
 import BlogView from './views/Resources/Blog/BlogView.vue';
 import BlogPostDetailsView from './views/Resources/Blog/BlogPostDetailsView.vue';
+import IndustryInsightsView from './views/Resources/IndustryInsights/IndustryInsightsView.vue';
+import IndustryInsightsPostDetailsView from './views/Resources/IndustryInsights/IndustryInsightsPostDetailsView.vue';
 
 const createMyApp = (siteKey) => {
     const app = createApp({});
@@ -35,6 +37,8 @@ const createMyApp = (siteKey) => {
     app.component('stories-post-details-view', StoriesPostDetailsView);
     app.component('blog-view', BlogView);
     app.component('blog-post-details-view', BlogPostDetailsView);
+    app.component('industry-insights-view', IndustryInsightsView);
+    app.component('industry-insights-post-details-view', IndustryInsightsPostDetailsView);
 
     app.use(head);
     app.use(MotionPlugin);
