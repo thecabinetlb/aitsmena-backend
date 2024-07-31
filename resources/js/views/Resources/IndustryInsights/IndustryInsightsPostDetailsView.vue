@@ -1,18 +1,33 @@
 <script setup>
-import PostDetails from '../../../components/PostDetails.vue'
-import { getIndustryInsightsBySlug } from '../../../utils/api_functions'
-import { useRoute } from 'vue-router'
 import { ref, onMounted } from 'vue';
+import { getIndustryInsightsBySlug } from '../../../utils/api_functions';
+import PostDetails from '../../../components/PostDetails.vue';
 
-const route = useRoute()
-const industryinsightspost = ref({});
+const props = defineProps({
+  initialSlug: String
+});
+
+const industryinsightspost = ref([]);
+
+const fetchIndustryInsights = async (slug) => {
+  try {
+    const response = await getIndustryInsightsBySlug(slug);
+    if (response && slug) {
+      industryinsightspost.value = response[0];
+      console.log("industryinsightspost", response[0]);
+    } else {
+    }
+  } catch (error) {
+  }
+};
 
 onMounted(() => {
-  if(route.params.slug){
-    getIndustryInsightsBySlug(route.params.slug);
+  if (props.initialSlug) {
+    fetchIndustryInsights(props.initialSlug);
+  } else {
+    console.error('No slug found');
   }
 });
-console.log("slug", route.params.slug)
 </script>
 <template>
     <PostDetails sectiontitle="Industry Insights Post Details" :item="industryinsightspost"/>
