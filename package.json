@@ -7,18 +7,11 @@
     },
     "devDependencies": {
         "@awcodes/alpine-floating-ui": "^3.6.3",
-        "@unhead/vue": "^1.9.16",
-        "@vitejs/plugin-vue": "^5.0.5",
         "@vueuse/motion": "^2.2.3",
         "alpinejs": "^3.13.10",
         "autoprefixer": "^10.4.19",
-        "axios": "^1.7.2",
-        "laravel-vite-plugin": "^1.0.0",
         "postcss": "^8.4.38",
         "tailwindcss": "^3.4.3",
-        "vite": "^5.0.0",
-        "vue-recaptcha": "^3.0.0-alpha.6",
-        "vue-router": "^4.4.0",
-        "vue3-carousel": "^0.3.3"
+        "vite": "^5.0.0"
     }
 }
