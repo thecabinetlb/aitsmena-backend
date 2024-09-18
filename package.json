@@ -5,13 +5,7 @@
         "dev": "vite",
         "build": "vite build"
     },
-    "devDependencies": {
-        "@awcodes/alpine-floating-ui": "^3.6.3",
-        "@vueuse/motion": "^2.2.3",
-        "alpinejs": "^3.13.10",
-        "autoprefixer": "^10.4.19",
-        "postcss": "^8.4.38",
-        "tailwindcss": "^3.4.3",
-        "vite": "^5.0.0"
+    "dependencies": {
+        "laravel-vite-plugin": "^1.0.5"
     }
 }
