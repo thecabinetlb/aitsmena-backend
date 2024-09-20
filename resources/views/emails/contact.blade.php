@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Contact Form Submission</title>
+    <title>AITS - New Contact Form Submission</title>
 </head>
 <body>
-    <h1><strong>Name:</strong></h1> <p>{{ $contact['name'] }}</p>
-    <h1><strong>Email:</strong></h1> <p>{{ $contact['email'] }}</p>
-    <h1><strong>Phone:</strong></h1> <p>{{ $contact['phone'] }}</p>
-    <h1><strong>Country:</strong></h1> <p>{{ $contact['country'] }}</p>
-    <h1><strong>City:</strong></h1> <p>{{ $contact['city'] }}</p>
-    <h1><strong>Industry:</strong></h1> <p>{{ $contact['industry'] }}</p>
-    <h1><strong>Inquiry:</strong></h1> <p>{{ $contact['inquiry'] }}</p>
-    <h1><strong>Message:</strong></h1> <p>{{ $contact['content'] }}</p>
+    <P><strong>Name: </strong>{{ $contact['name'] }}</p>
+    <P><strong>Email: </strong>{{ $contact['email'] }}</p>
+    <P><strong>Phone: </strong>{{ $contact['phone'] }}</p>
+    <P><strong>Country: </strong>{{ $contact['country'] }}</p>
+    <P><strong>City: </strong>{{ $contact['city'] }}</p>
+    <P><strong>Industry: </strong>{{ $contact['industry'] }}</p>
+    <P><strong>Inquiry: </strong>{{ $contact['inquiry'] }}</p>
+    <P><strong>Message: </strong>{{ $contact['content'] }}</p>
 </body>
 </html>
