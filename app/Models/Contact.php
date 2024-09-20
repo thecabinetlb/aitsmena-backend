@@ -12,9 +12,12 @@ class Contact extends Model
         'name',
         'email',
         'phone',
-        'company_name',
-        'subject',
-        'message',
+        'country',
+        'city',
+        'industry',
+        'inquiry',
+        'content',
         'created_at'
     ];
+
 }
