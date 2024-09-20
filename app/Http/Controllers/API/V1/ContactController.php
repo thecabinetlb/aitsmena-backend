@@ -69,7 +69,7 @@ class ContactController extends Controller
 
         try {
  
-            Mail::to('najatt.ismail@gmail.com')->send(new ContactMessage($contact));
+            Mail::to('najat.h@cyberg-ae.com')->send(new ContactMessage($contact));
             return 'Email sent successfully.';
         } catch (\Exception $e) {
             return 'Failed to send email: ' . $e->getMessage();
