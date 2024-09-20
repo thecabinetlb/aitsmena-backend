@@ -38,7 +38,7 @@ class ContactController extends Controller
             'phone.numeric' => 'Phone Number must contain only digits.',
             'phone.digits_between' => 'Phone Number must be between :min and :max digits long.',
             'industry.required' => 'Industry is required.',
-            'industry.in' => 'Invalid industry. Please select either General Inquiriy or Sales and Support.',
+            'industry.in' => 'Invalid industry. Please select from the current industries we serve.',
             'inquiry.required' => 'Inquiry is required.',
             'inquiry.in' => 'Invalid inquiry. Please select either General Inquiry or Sales and Support.',
             'content.required' => 'Please enter your message.',
