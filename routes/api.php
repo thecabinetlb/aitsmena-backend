@@ -8,6 +8,8 @@ use App\Http\Controllers\API\V1\BlogPostController;
 use App\Http\Controllers\API\V1\IndustryInsightController;
 use App\Http\Controllers\API\V1\SuccessStoryController;
 use App\Http\Controllers\API\V1\WhitepaperController;
+use Illuminate\Support\Facades\Mail;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,6 +21,18 @@ use App\Http\Controllers\API\V1\WhitepaperController;
 |
 */
 
+Route::get('/test-email-basic', function () {
+    try {
+        Mail::raw('This is a test email.', function ($message) {
+            $message->to('najatt.ismail@gmail.com')
+                    ->subject('Test Email');
+        });
+
+        return 'Basic email sent successfully.';
+    } catch (\Exception $e) {
+        return 'Failed to send email: ' . $e->getMessage();
+    }
+});
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -46,9 +60,3 @@ Route::get('whitepapers/featured', [WhitepaperController::class, 'getFeatured'])
 Route::get('whitepapers/arabic', [WhitepaperController::class, 'getArabic']);
 Route::get('whitepapers/gated', [WhitepaperController::class, 'getGated']);
 Route::get('whitepapers/not-gated', [WhitepaperController::class, 'getNoteGated']);
-
-Route::get('/recaptcha-config', function () {
-    return response()->json([
-        'v2SiteKey' => env('RECAPTCHAV2_SITEKEY'),
-    ]);
-});
