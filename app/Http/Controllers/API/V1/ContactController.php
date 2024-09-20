@@ -24,8 +24,7 @@ class ContactController extends Controller
             'phone' => 'required|numeric|digits_between:8,15', // Numeric and between 8 and 15 digits
             'country' => 'required',
             'city' => 'required',
-            'industry' => ['required', Rule::in(['Smart Cities', 'Food & Beverage', 'Manufacturing', 'Oil & Gas', 'Energy', 'Utilities', 'Metal, Mining, & Minerals'])],
-            'inquiry' => ['required', Rule::in(['General Inquiry', 'Sales and Support'])],
+
             'content' => 'required',
         ],
         [
@@ -38,9 +37,7 @@ class ContactController extends Controller
             'phone.numeric' => 'Phone Number must contain only digits.',
             'phone.digits_between' => 'Phone Number must be between :min and :max digits long.',
             'industry.required' => 'Industry is required.',
-            'industry.in' => 'Invalid industry. Please select from the current industries we serve.',
             'inquiry.required' => 'Inquiry is required.',
-            'inquiry.in' => 'Invalid inquiry. Please select either General Inquiry or Sales and Support.',
             'content.required' => 'Please enter your message.',
         ]);
 
