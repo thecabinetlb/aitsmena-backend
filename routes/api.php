@@ -8,6 +8,7 @@ use App\Http\Controllers\API\V1\BlogPostController;
 use App\Http\Controllers\API\V1\IndustryInsightController;
 use App\Http\Controllers\API\V1\SuccessStoryController;
 use App\Http\Controllers\API\V1\WhitepaperController;
+use App\Http\Controllers\PressReleaseController;
 use Illuminate\Support\Facades\Mail;
 
 /*
@@ -60,3 +61,8 @@ Route::get('whitepapers/featured', [WhitepaperController::class, 'getFeatured'])
 Route::get('whitepapers/arabic', [WhitepaperController::class, 'getArabic']);
 Route::get('whitepapers/gated', [WhitepaperController::class, 'getGated']);
 Route::get('whitepapers/not-gated', [WhitepaperController::class, 'getNoteGated']);
+
+Route::get('press-releases', [PressReleaseController::class, 'index']);
+Route::get('press-releases/{slug}', [PressReleaseController::class, 'getBySlug']);
+Route::get('press-releases/featured', [PressReleaseController::class, 'getFeatured']);
+Route::get('press-releases/arabic', [PressReleaseController::class, 'getArabic']);

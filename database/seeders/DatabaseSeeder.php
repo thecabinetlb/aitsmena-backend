@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,13 +15,12 @@ class DatabaseSeeder extends Seeder
     {
 
         $this->call([
-            CategorySeeder::class,
             IndustrySeeder::class,
+            PublicationTypeSeeder::class,
+            PublicationTypeSeeder::class,
             BlogPostSeeder::class,
             IndustryInsightSeeder::class,
         ]);
-        \App\Models\SuccessStory::factory(5)->create();
-        \App\Models\Whitepaper::factory(5)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

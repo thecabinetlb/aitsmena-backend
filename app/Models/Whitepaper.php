@@ -15,11 +15,11 @@ class Whitepaper extends Model
         'slug',
         'summary',
         'tags',
-        'thumbnail',
+        'image',
         'published_at',
         'is_featured',
         'is_arabic',
-        'category_id',
+        'publication_type_id',
         'industry_id',
         'attachment',
         'is_gated'
@@ -29,14 +29,16 @@ class Whitepaper extends Model
         'published_at' => 'datetime',
     ];
 
-    public function category()
+    public function publicationtype()
     {
-        return $this->belongsTo(category::class);
+        return $this->belongsTo(PublicationType::class);
     }
+
     public function industry()
     {
         return $this->belongsTo(industry::class);
-    }
+    } 
+    
     public function scopeTimePublished($query)
     {
         $query->where('published_at', '<=', Carbon::now());

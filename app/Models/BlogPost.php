@@ -16,21 +16,28 @@ class BlogPost extends Model
         'slug',
         'summary',
         'tags',
-        'thumbnail',
+        'image',
         'body',
         'published_at',
         'is_featured',
         'is_arabic',
-        'category_id'
+        'publication_type_id',
+        'industry_id'
     ];
 
     protected $casts = [
         'tags' => 'array',
         'published_at' => 'datetime',
     ];
-    public function category()
+
+    public function publicationtype()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(PublicationType::class);
+    }
+
+    public function industry()
+    {
+        return $this->belongsTo(industry::class);
     }
 
     public function scopeTimePublished($query)

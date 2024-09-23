@@ -93,7 +93,7 @@ class BlogPostResource extends Resource
             ->schema([
                 Section::make('Image')
                 ->schema([
-                    FileUpload::make('thumbnail')->image()->directory('blog/thumbnails')            
+                    FileUpload::make('image')->image()->directory('blog/covers')            
                 ])->collapsible(),
                 Section::make('Meta')
                 ->schema([
@@ -117,8 +117,7 @@ class BlogPostResource extends Resource
     {
         return $table
             ->columns([
-            ImageColumn::make('thumbnail')
-            ->defaultImageUrl(url('/images/logo-light.webp'))->grow(false),
+            ImageColumn::make('image'),
             TextColumn::make('title')->sortable()->searchable(),
             TextColumn::make('slug')->sortable(),
             ToggleColumn::make('is_featured')->label('Featured'),

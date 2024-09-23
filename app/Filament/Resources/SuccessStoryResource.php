@@ -102,7 +102,7 @@ class SuccessStoryResource extends Resource
                 ])->collapsible(),                
                 Section::make('Image')
                 ->schema([
-                    FileUpload::make('thumbnail')->image()->directory('success-stories/thumbnails')            
+                    FileUpload::make('image')->image()->directory('success-storie/covers')            
                 ])->collapsible(),
                 Section::make('Meta')
                 ->schema([
@@ -129,8 +129,7 @@ class SuccessStoryResource extends Resource
                 TextColumn::make('customer_name')->sortable()->searchable(),
                 ImageColumn::make('customer_logo'),
                 TextColumn::make('title')->sortable()->searchable(),
-                ImageColumn::make('thumbnail')
-                ->defaultImageUrl(url('/images/logo-light.webp')),
+                ImageColumn::make('image'),
                 TextColumn::make('slug'),
                 TextColumn::make('industry.title')->searchable(),
                 ToggleColumn::make('is_featured')->label('Featured'),

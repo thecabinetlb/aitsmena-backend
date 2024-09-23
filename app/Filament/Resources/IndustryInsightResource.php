@@ -88,7 +88,7 @@ class IndustryInsightResource extends Resource
             ->schema([
                 Section::make('Image')
                 ->schema([
-                    FileUpload::make('thumbnail')->image()->directory('industry-insights/thumbnails')            
+                    FileUpload::make('image')->image()->directory('industry-insights/covers')            
                 ])->collapsible(),
                 Section::make('Meta')
                 ->schema([
@@ -112,8 +112,7 @@ class IndustryInsightResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('thumbnail')
-                ->defaultImageUrl(url('/images/logo-light.webp')),
+                ImageColumn::make('image'),
                 TextColumn::make('title')->sortable()->searchable(),
                 TextColumn::make('slug')->sortable(),
                 ToggleColumn::make('is_featured')->label('Featured'),

@@ -16,7 +16,7 @@ class IndustryInsightSeeder extends Seeder
         $industryinsightsPosts = [
             [
                 'id' => 1,
-                'thumbnail' => url('/storage/industry-insights/thumbnails/logistics-means-transport-together-with-technological-futuristic-holograms.webp'),
+                'image' => url('/industry-insights/covers/logistics-means-transport-together-with-technological-futuristic-holograms.webp'),
                 'title' => 'The Rise of Smart Cities and Their Impact on Urban Living',
                 'slug' => 'the-rise-of-smart-cities-and-their-impact-on-urban-living',
                 'summary' => 'Smart cities are enhancing urban living through advanced technologies and efficient city operations.',
@@ -29,7 +29,7 @@ class IndustryInsightSeeder extends Seeder
             ],
             [
                 'id' => 2,
-                'thumbnail' => url('/storage/industry-insights/thumbnails/barman-using-coffee-machine.webp'),
+                'image' => url('/industry-insights/covers/barman-using-coffee-machine.webp'),
                 'title' => 'Ensuring Quality and Compliance in the Food & Beverage Industry',
                 'slug' => 'ensuring-quality-and-compliance-in-the-food-and-beverage-industry',
                 'summary' => 'Discover how innovative software solutions enhance quality control and compliance in the food & beverage sector.',
@@ -42,7 +42,7 @@ class IndustryInsightSeeder extends Seeder
             ],
             [
                 'id' => 3,
-                'thumbnail' => url('/storage/industry-insights/thumbnails/cutting-metal-with-plasma-equipment.webp'),
+                'image' => url('/industry-insights/covers/cutting-metal-with-plasma-equipment.webp'),
                 'title' => 'تعزيز كفاءة التصنيع بالتقنيات الحديثة',
                 'slug' => 'تعزيز-كفاءة-التصنيع-بالتقنيات-الحديثة',
                 'summary' => 'استكشاف كيفية تحسين الكفاءة والإنتاجية في صناعة التصنيع باستخدام التقنيات الحديثة.',
@@ -55,7 +55,7 @@ class IndustryInsightSeeder extends Seeder
             ],            
             [
                 'id' => 4,
-                'thumbnail' => url('/storage/industry-insights/thumbnails/extracting-machines-oil.webp'),
+                'image' => url('/industry-insights/covers/extracting-machines-oil.webp'),
                 'title' => 'Digital Transformation in the Oil & Gas Sector',
                 'slug' => 'digital-transformation-in-the-oil-and-gas-sector',
                 'summary' => 'Understand how digital solutions are optimizing operations and mitigating risks in the oil & gas industry.',
@@ -68,7 +68,7 @@ class IndustryInsightSeeder extends Seeder
             ],
             [
                 'id' => 5,
-                'thumbnail' => url('/storage/industry-insights/thumbnails/cutting-metal-with-plasma-equipment.webp'),
+                'image' => url('/industry-insights/covers/cutting-metal-with-plasma-equipment.webp'),
                 'title' => 'Sustainable Energy Solutions for a Resilient Future',
                 'slug' => 'sustainable-energy-solutions-for-a-resilient-future',
                 'summary' => 'Explore how advanced systems are driving sustainability and efficiency in the energy sector.',
@@ -81,7 +81,7 @@ class IndustryInsightSeeder extends Seeder
             ],
             [
                 'id' => 6,
-                'thumbnail' => url('/storage/industry-insights/thumbnails/sun-setting-silhouette-electricity-pylons.webp'),
+                'image' => url('/industry-insights/covers/sun-setting-silhouette-electricity-pylons.webp'),
                 'title' => 'Optimizing Utility Operations with Advanced Technologies',
                 'slug' => 'optimizing-utility-operations-with-advanced-technologies',
                 'summary' => 'Discover how utilities can optimize asset management and enhance grid reliability with digital solutions.',
@@ -94,7 +94,7 @@ class IndustryInsightSeeder extends Seeder
             ],
             [
                 'id' => 7,
-                'thumbnail' => url('/storage/industry-insights/thumbnails/view-ialomitei-cave-bucegi-mountains-romania.webp'),
+                'image' => url('/industry-insights/covers/view-ialomitei-cave-bucegi-mountains-romania.webp'),
                 'title' => 'Advancements in the Metal, Mining & Minerals Industry',
                 'slug' => 'advancements-in-the-metal-mining-and-minerals-industry',
                 'summary' => 'Learn about the latest advancements that help tackle challenges in the metal, mining, and minerals industry.',

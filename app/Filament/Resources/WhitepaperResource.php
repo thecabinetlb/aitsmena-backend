@@ -74,7 +74,7 @@ class WhitepaperResource extends Resource
                 ])->collapsible(),              
                 Section::make('Image')
                 ->schema([  
-                    FileUpload::make('thumbnail')->image()->directory('whitepapers/thumbnails')->columnSpanFull(),             
+                    FileUpload::make('image')->image()->directory('whitepapers/covers')            
                 ])
                 ->collapsible(),
                 Section::make('Meta')

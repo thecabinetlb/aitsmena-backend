@@ -1,31 +1,30 @@
 <?php
 
-namespace App\Http\Controllers\API\V1;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller; 
-use App\Models\BlogPost;
+use App\Models\PressRelease;
 use Illuminate\Http\Request;
 
-class BlogPostController extends Controller
+class PressReleaseController extends Controller
 {
     public function index()
     {
-        return BlogPost::all();
+        return PressRelease::all();
     }
 
     public function getBySlug($slug)
     {
-        $post = BlogPost::where('slug', $slug)->get();
+        $post = PressRelease::where('slug', $slug)->get();
         return response()->json($post);
     }
 
     public function getFeatured()
     {
-        $featuredPosts = BlogPost::featured()->get();
+        $featuredPosts = PressRelease::featured()->get();
         return response()->json($featuredPosts);
     }
 
-    public function getArabic(BlogPost $blogpost)
+    public function getArabic(PressRelease $blogpost)
     {
         $arabicPosts = $blogpost->arabic()->get();
         return response()->json($arabicPosts);

@@ -16,6 +16,11 @@ class Industry extends Model
         'slug',
         'summary',
     ];
+    public function BlogPosts()
+    {
+        return $this->hasMany(BlogPost::class);
+    }
+
     public function IndustryInsights()
     {
         return $this->hasMany(IndustryInsight::class);
