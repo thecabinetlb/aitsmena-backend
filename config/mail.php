@@ -37,14 +37,15 @@ return [
         'smtp' => [
             'transport' => 'smtp',
             'url' => env('MAIL_URL'),
+            'name' => env('MAIL_FROM_NAME', 'AITSMENA'),
             'host' => env('MAIL_HOST', 'smtp.zoho.com'),
-            'port' => env('MAIL_PORT', 587),
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+            'port' => env('MAIL_PORT', 465),
+            'encryption' => env('MAIL_ENCRYPTION', 'SSL'),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
-            'auth_mode'  => 'login',
+            'auth_mode'  => null,
             'verify_peer'=> false,
         ],
 
@@ -110,8 +111,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'info@aitsmena.com'),
+        'name' => env('MAIL_FROM_NAME', 'AITSMENA'),
     ],
 
     /*
