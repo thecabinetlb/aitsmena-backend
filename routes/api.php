@@ -26,7 +26,7 @@ Route::get('/test-email-basic', function () {
     try {
         Mail::raw('This is a test email.', function ($message) {
             $message->to('najat.h@cyberg-ae.com')
-                    ->subject('Test Email');
+                    ->subject('Zoho SMTP Testing');;
         });
 
         return 'Basic email sent successfully.';
