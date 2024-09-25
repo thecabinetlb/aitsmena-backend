@@ -21,7 +21,7 @@ class NewsletterResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
     protected static ?string $navigationLabel = 'Newsletter Subscriptions';
-    
+
     public static function getTableQuery()
     {
         return parent::getTableQuery()->orderBy('created_at', 'desc');
@@ -45,7 +45,7 @@ class NewsletterResource extends Resource
         return $table
         ->columns([
             TextColumn::make('email'),
-            TextColumn::make('created_at')->sortable()
+            TextColumn::make('created_at')->label('Subscribed At')->sortable()
             ])
             ->filters([
                 //

@@ -49,7 +49,7 @@ class ContactResource extends Resource
                 TextColumn::make('industry')->sortable()->searchable(),
                 TextColumn::make('inquiry')->sortable()->searchable(),
                 TextColumn::make('content')->wrap(),
-                TextColumn::make('created_at')->sortable(),
+                TextColumn::make('created_at')->label('Submitted At')->sortable(),
             ])
             ->filters([
                 //
