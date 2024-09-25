@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\V1\ContactController;
 use App\Http\Controllers\API\V1\BlogPostController;
 use App\Http\Controllers\API\V1\IndustryInsightController;
+use App\Http\Controllers\API\V1\NewsletterController;
 use App\Http\Controllers\API\V1\SuccessStoryController;
 use App\Http\Controllers\API\V1\WhitepaperController;
 use App\Http\Controllers\PressReleaseController;
@@ -66,3 +67,6 @@ Route::get('press-releases', [PressReleaseController::class, 'index']);
 Route::get('press-releases/{slug}', [PressReleaseController::class, 'getBySlug']);
 Route::get('press-releases/featured', [PressReleaseController::class, 'getFeatured']);
 Route::get('press-releases/arabic', [PressReleaseController::class, 'getArabic']);
+
+Route::post('newsletter_subscriptions', [NewsletterController::class, 'store']);
+Route::get('newsletter', [NewsletterController::class, 'index']);
