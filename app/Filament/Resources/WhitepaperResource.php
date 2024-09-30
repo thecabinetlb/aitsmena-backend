@@ -16,10 +16,11 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\Section;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TagsInput;
-
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Support\Str;
@@ -55,6 +56,12 @@ class WhitepaperResource extends Resource
                     $set('slug', Str::slug($state));
                 }),
                 TextInput::make('slug')->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(150),
+                Select::make('industry_id')
+                ->label('Industry')
+                ->relationship('industry', 'title')
+                ->searchable()
+                ->required()
+                ->columnSpanFull(),    
                 TextArea::make('summary')
                 ->rows(5)
                 ->cols(20)
@@ -75,11 +82,11 @@ class WhitepaperResource extends Resource
             ->schema([    
                 Section::make('Attachement')
                 ->schema([        
-                    FileUpload::make('attachment')->directory('whitepapers/uploads')->columnSpanFull(),               
+                    FileUpload::make('attachment')->directory('uploads/whitepapers/attachements')->columnSpanFull(),               
                 ])->collapsible(),              
-                Section::make('Image')
+                Section::make('Cover Image')
                 ->schema([  
-                    FileUpload::make('image')->image()->directory('whitepapers/covers')            
+                    FileUpload::make('cover')->image()->directory('uploads/whitepapers/covers')            
                 ])
                 ->collapsible(),
                 Section::make('Meta')
@@ -104,15 +111,21 @@ class WhitepaperResource extends Resource
     {
         return $table
             ->columns([
+                ImageColumn::make('cover'),                
                 TextColumn::make('title')->sortable()->searchable(),
                 TextColumn::make('slug'),
+                TextColumn::make('industry.title')
+                ->badge()
+                ->sortable()->searchable(),
                 ToggleColumn::make('is_featured')->label('Featured'),
                 ToggleColumn::make('is_arabic')->label('In Arabic'),
                 ToggleColumn::make('is_gated')->label('Gated'),
-                TextColumn::make('created_at')
+                TextColumn::make('published_at')
                 ->dateTime('M-d-Y')
                 ->sortable()
                 ->searchable(),
+                TextColumn::make('created_at')
+                ->dateTime('M-d-Y'),                  
                 TextColumn::make('updated_at')
                 ->dateTime('M-d-Y'),        
             ])

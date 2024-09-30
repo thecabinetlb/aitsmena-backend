@@ -56,6 +56,12 @@ class SuccessStoryResource extends Resource
                 $set('slug', Str::slug($state));
             }),
             TextInput::make('slug')->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(150),
+            Select::make('industry_id')
+            ->label('Industry')
+            ->relationship('industry', 'title')
+            ->searchable()
+            ->required()
+            ->columnSpanFull(),            
             TextArea::make('summary')
             ->rows(5)
             ->cols(20)
@@ -80,15 +86,10 @@ class SuccessStoryResource extends Resource
                 'underline',
                 'undo',
             ])
-            ->fileAttachmentsDirectory('success-stories/images')
+            ->fileAttachmentsDirectory('uploads/success-stories/images')
             ->required()
             ->columnSpanFull(),
-            Select::make('industry_id')
-            ->label('Industry')
-            ->relationship('industry', 'title')
-            ->searchable()
-            ->required()
-            ->columnSpanFull(),
+
             DateTimePicker::make('published_at')
             ->default(now())
             ->columnSpanFull(),            
@@ -103,11 +104,11 @@ class SuccessStoryResource extends Resource
                     TextInput::make('customer_name')
                     ->required()
                     ->maxLength(255),                       
-                    FileUpload::make('customer_logo')->image()->directory('success-stories/logos'),
+                    FileUpload::make('customer_logo')->image()->directory('uploads/success-stories/logos'),
                 ])->collapsible(),                
-                Section::make('Image')
+                Section::make('Cover Image')
                 ->schema([
-                    FileUpload::make('image')->image()->directory('success-storie/covers')            
+                    FileUpload::make('cover')->image()->directory('uploads/success-storie/covers')            
                 ])->collapsible(),
                 Section::make('Meta')
                 ->schema([
@@ -131,20 +132,24 @@ class SuccessStoryResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('customer_name')->sortable()->searchable(),
-                ImageColumn::make('customer_logo'),
+                ImageColumn::make('cover'),
                 TextColumn::make('title')->sortable()->searchable(),
-                ImageColumn::make('image'),
                 TextColumn::make('slug'),
-                TextColumn::make('industry.title')->searchable(),
+                TextColumn::make('industry.title')
+                ->badge()
+                ->sortable()->searchable(),              
+                TextColumn::make('customer_name')->sortable()->searchable(),
+                ImageColumn::make('customer_logo'),               
                 ToggleColumn::make('is_featured')->label('Featured'),
                 ToggleColumn::make('is_arabic')->label('In Arabic'),
-                TextColumn::make('created_at')
+                TextColumn::make('published_at')
                 ->dateTime('M-d-Y')
                 ->sortable()
                 ->searchable(),
+                TextColumn::make('created_at')
+                ->dateTime('M-d-Y'),                  
                 TextColumn::make('updated_at')
-                ->dateTime('M-d-Y'),          
+                ->dateTime('M-d-Y'),        
             ])
             ->filters([
                 //

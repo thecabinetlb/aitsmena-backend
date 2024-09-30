@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('success_stories', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
+            $table->string('cover');
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('summary');

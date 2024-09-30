@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('press_releases', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
+            $table->string('cover');
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('summary');

@@ -25,7 +25,7 @@ use Illuminate\Support\Str;
 
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Group;
-
+use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\Layout\Split;
 use Filament\Tables\Columns\Layout\Stack;
 
@@ -60,6 +60,12 @@ class BlogPostResource extends Resource
                 $set('slug', Str::slug($state));
             }),
             TextInput::make('slug')->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(150),
+            Select::make('industry_id')
+            ->label('Industry')
+            ->relationship('industry', 'title')
+            ->searchable()
+            ->required()
+            ->columnSpanFull(),    
             TextArea::make('summary')
             ->rows(5)
             ->cols(20)
@@ -84,7 +90,7 @@ class BlogPostResource extends Resource
                 'underline',
                 'undo',
             ])
-            ->fileAttachmentsDirectory('blog/images')
+            ->fileAttachmentsDirectory('uploads/blog/images')
             ->required()
             ->columnSpanFull(),
             DateTimePicker::make('published_at')
@@ -96,9 +102,9 @@ class BlogPostResource extends Resource
             ->collapsible(),
             Group::make()
             ->schema([
-                Section::make('Image')
+                Section::make('Cover Image')
                 ->schema([
-                    FileUpload::make('image')->image()->directory('blog/covers')            
+                    FileUpload::make('cover')->image()->directory('uploads/blog/covers')            
                 ])->collapsible(),
                 Section::make('Meta')
                 ->schema([
@@ -122,17 +128,22 @@ class BlogPostResource extends Resource
     {
         return $table
             ->columns([
-            ImageColumn::make('image'),
+            ImageColumn::make('cover'),
             TextColumn::make('title')->sortable()->searchable(),
-            TextColumn::make('slug')->sortable(),
-            ToggleColumn::make('is_featured')->label('Featured'),
+            TextColumn::make('slug'),
+            TextColumn::make('industry.title')
+            ->badge()
+            ->sortable()->searchable(),            
+             ToggleColumn::make('is_featured')->label('Featured'),
             ToggleColumn::make('is_arabic')->label('In Arabic'),
             TextColumn::make('published_at')
             ->dateTime('M-d-Y')
             ->sortable()
             ->searchable(),
+            TextColumn::make('created_at')
+            ->dateTime('M-d-Y'),                  
             TextColumn::make('updated_at')
-            ->dateTime('M-d-Y')
+            ->dateTime('M-d-Y'), 
             ])
             ->filters([
                 //

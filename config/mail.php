@@ -38,15 +38,13 @@ return [
             'transport' => 'smtp',
             'url' => env('MAIL_URL'),
             'name' => env('MAIL_FROM_NAME', 'AITSMENA'),
-            'host' => env('MAIL_HOST', 'smtp.zoho.com'),
-            'port' => env('MAIL_PORT', 465),
-            'encryption' => env('MAIL_ENCRYPTION', 'SSL'),
+            'host' => env('MAIL_HOST', 'smtp-mail.outlook.com'),
+            'port' => env('MAIL_PORT', 587),
+            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
-            'auth_mode'  => null,
-            'verify_peer'=> false,
         ],
 
         'ses' => [
@@ -111,7 +109,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'info@aitsmena.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'marketing@aitsmena.com'),
         'name' => env('MAIL_FROM_NAME', 'AITSMENA'),
     ],
 

@@ -10,7 +10,7 @@ class Industry extends Model
     use HasFactory;
     
     protected $fillable = [
-        'thumbnail',
+        'image',
         'title',
         'description',
         'slug',
@@ -32,5 +32,9 @@ class Industry extends Model
     public function Whitepapers()
     {
         return $this->hasMany(Whitepaper::class);
+    }
+    public function PressRelease()
+    {
+        return $this->hasMany(PressRelease::class);
     }
 }
