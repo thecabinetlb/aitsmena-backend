@@ -34,11 +34,6 @@ class PressReleaseResource extends Resource
     protected static ?string $navigationGroup = 'Resources';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    
-    public static function shouldRegisterNavigation(): bool
-    {
-        return false;
-    }
 
     public static function form(Form $form): Form
     {
@@ -102,7 +97,7 @@ class PressReleaseResource extends Resource
             ->schema([
                 Section::make('Cover Image')
                 ->schema([
-                    FileUpload::make('cover')->image()->directory('uploads/press-release/covers')            
+                    FileUpload::make('cover')->image()->preservefilename()->required()->directory('uploads/press-release/covers')            
                 ])->collapsible(),
                 Section::make('Meta')
                 ->schema([

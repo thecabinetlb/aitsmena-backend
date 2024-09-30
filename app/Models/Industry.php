@@ -10,9 +10,9 @@ class Industry extends Model
     use HasFactory;
     
     protected $fillable = [
-        'image',
+        'icon',
         'title',
-        'description',
+        'body',
         'slug',
         'summary',
     ];

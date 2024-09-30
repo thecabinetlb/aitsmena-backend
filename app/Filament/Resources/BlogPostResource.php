@@ -36,11 +36,6 @@ class BlogPostResource extends Resource
     protected static ?string $navigationGroup = 'Resources';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    
-    public static function shouldRegisterNavigation(): bool
-    {
-        return false;
-    }
 
     public static function form(Form $form): Form
     {
@@ -104,7 +99,7 @@ class BlogPostResource extends Resource
             ->schema([
                 Section::make('Cover Image')
                 ->schema([
-                    FileUpload::make('cover')->image()->directory('uploads/blog/covers')            
+                    FileUpload::make('cover')->image()->preservefilename()->required()->directory('uploads/blog/covers')            
                 ])->collapsible(),
                 Section::make('Meta')
                 ->schema([

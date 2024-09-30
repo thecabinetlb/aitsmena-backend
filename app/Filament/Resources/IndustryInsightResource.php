@@ -32,11 +32,6 @@ class IndustryInsightResource extends Resource
     protected static ?string $navigationGroup = 'Resources';    
     
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    
-    public static function shouldRegisterNavigation(): bool
-    {
-        return false;
-    }
 
     public static function form(Form $form): Form
     {
@@ -100,7 +95,7 @@ class IndustryInsightResource extends Resource
             ->schema([
                 Section::make('Cover Image')
                 ->schema([
-                    FileUpload::make('cover')->image()->directory('uploads/industry-insights/covers')            
+                    FileUpload::make('cover')->image()->preservefilename()->required()->directory('uploads/industry-insights/covers')            
                 ])->collapsible(),
                 Section::make('Meta')
                 ->schema([

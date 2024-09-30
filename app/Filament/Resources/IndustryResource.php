@@ -24,7 +24,6 @@ class IndustryResource extends Resource
     protected static ?string $model = Industry::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
-        
 
     public static function form(Form $form): Form
     {
@@ -44,7 +43,7 @@ class IndustryResource extends Resource
                 $set('slug', Str::slug($state));
             }),
             TextInput::make('slug')->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(150),
-            FileUpload::make('icon')->image()->directory('industry/icons')->columnSpanFull(),
+            FileUpload::make('icon')->image()->directory('industry/icons')->required()->columnSpanFull(),
             RichEditor::make('body')
             ->toolbarButtons([
                 'attachFiles',
@@ -64,7 +63,7 @@ class IndustryResource extends Resource
             ])
             ->required()
             ->columnSpanFull(),
-            ])->columnSpan(1)->columns(2)
+            ])->columnSpan(2)->columns(2)
         ]);
     }
 

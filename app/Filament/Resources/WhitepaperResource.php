@@ -33,11 +33,6 @@ class WhitepaperResource extends Resource
     
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    public static function shouldRegisterNavigation(): bool
-    {
-        return false;
-    }
-
     public static function form(Form $form): Form
     {
         return $form
@@ -80,13 +75,13 @@ class WhitepaperResource extends Resource
             ->collapsible(), 
             Group::make()
             ->schema([    
-                Section::make('Attachement')
+                Section::make('Attachment')
                 ->schema([        
-                    FileUpload::make('attachment')->directory('uploads/whitepapers/attachements')->columnSpanFull(),               
+                    FileUpload::make('attachment')->preservefilename()->required()->directory('uploads/whitepapers/attachments')->columnSpanFull(),               
                 ])->collapsible(),              
                 Section::make('Cover Image')
                 ->schema([  
-                    FileUpload::make('cover')->image()->directory('uploads/whitepapers/covers')            
+                    FileUpload::make('cover')->image()->preservefilename()->required()->directory('uploads/whitepapers/covers')            
                 ])
                 ->collapsible(),
                 Section::make('Meta')
