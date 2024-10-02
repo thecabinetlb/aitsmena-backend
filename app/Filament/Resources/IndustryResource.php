@@ -24,7 +24,10 @@ class IndustryResource extends Resource
     protected static ?string $model = Industry::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
-
+    public static function shouldRegisterNavigation(): bool
+    {
+        return false;
+    }
     public static function form(Form $form): Form
     {
         return $form
