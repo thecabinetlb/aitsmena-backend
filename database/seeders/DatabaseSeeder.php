@@ -15,11 +15,7 @@ class DatabaseSeeder extends Seeder
     {
 
         $this->call([
-            IndustrySeeder::class,
-            PublicationTypeSeeder::class,
-            PublicationTypeSeeder::class,
-            BlogPostSeeder::class,
-            IndustryInsightSeeder::class,
+        //
         ]);
 
         // \App\Models\User::factory()->create([
