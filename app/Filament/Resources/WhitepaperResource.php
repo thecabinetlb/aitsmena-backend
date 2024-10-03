@@ -32,10 +32,12 @@ class WhitepaperResource extends Resource
     protected static ?string $navigationGroup = 'Resources';
     
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
     public static function shouldRegisterNavigation(): bool
     {
         return false;
     }
+    
     public static function form(Form $form): Form
     {
         return $form
@@ -80,11 +82,11 @@ class WhitepaperResource extends Resource
             ->schema([    
                 Section::make('Attachment')
                 ->schema([        
-                    FileUpload::make('attachment')->preservefilename()->required()->directory('uploads/whitepapers/attachments')->columnSpanFull(),               
+                    FileUpload::make('attachment')->preserveFilenames()->required()->directory('uploads/whitepapers/attachments')->columnSpanFull(),               
                 ])->collapsible(),              
                 Section::make('Cover Image')
                 ->schema([  
-                    FileUpload::make('cover')->image()->preservefilename()->required()->directory('uploads/whitepapers/covers')            
+                    FileUpload::make('cover')->image()->preserveFilenames()->required()->directory('uploads/whitepapers/covers')            
                 ])
                 ->collapsible(),
                 Section::make('Meta')

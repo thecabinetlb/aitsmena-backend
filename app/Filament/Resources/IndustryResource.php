@@ -46,7 +46,7 @@ class IndustryResource extends Resource
                 $set('slug', Str::slug($state));
             }),
             TextInput::make('slug')->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(150),
-            FileUpload::make('icon')->image()->directory('industry/icons')->required()->columnSpanFull(),
+            FileUpload::make('icon')->image()->preserveFilenames()->directory('industry/icons')->required()->columnSpanFull(),
             RichEditor::make('body')
             ->toolbarButtons([
                 'attachFiles',
