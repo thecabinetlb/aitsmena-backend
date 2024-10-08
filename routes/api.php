@@ -5,8 +5,11 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\API\V1\ContactController;
 use App\Http\Controllers\API\V1\BlogPostController;
+use App\Http\Controllers\API\V1\GraduateProgramController;
 use App\Http\Controllers\API\V1\IndustryController;
 use App\Http\Controllers\API\V1\IndustryInsightController;
+use App\Http\Controllers\API\V1\InternshipController;
+use App\Http\Controllers\API\V1\JobController;
 use App\Http\Controllers\API\V1\NewsletterController;
 use App\Http\Controllers\API\V1\SuccessStoryController;
 use App\Http\Controllers\API\V1\WhitepaperController;
@@ -73,3 +76,7 @@ Route::post('newsletter_subscriptions', [NewsletterController::class, 'store']);
 Route::get('newsletter', [NewsletterController::class, 'index']);
 
 Route::get('industries', [IndustryController::class, 'index']);
+
+Route::get('internships', [InternshipController::class, 'index']);
+Route::get('jobs', [JobController::class, 'index']);
+Route::get('graduate-program-jobs', [GraduateProgramController::class, 'index']);
