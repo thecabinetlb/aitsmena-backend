@@ -13,7 +13,7 @@ use App\Http\Controllers\API\V1\JobController;
 use App\Http\Controllers\API\V1\NewsletterController;
 use App\Http\Controllers\API\V1\SuccessStoryController;
 use App\Http\Controllers\API\V1\WhitepaperController;
-use App\Http\Controllers\PressReleaseController;
+use App\Http\Controllers\API\V1\PressReleaseController;
 use Illuminate\Support\Facades\Mail;
 
 /*
