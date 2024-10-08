@@ -97,7 +97,7 @@ class BlogPostResource extends Resource
             ->schema([
                 Section::make('Cover Image')
                 ->schema([
-                    FileUpload::make('cover')->image()->preserveFilenames()->required()->directory('uploads/blog/covers')            
+                    FileUpload::make('cover')->image()->imageEditor()->preserveFilenames()->required()->directory('uploads/blog/covers')            
                 ])->collapsible(),
                 Section::make('Meta')
                 ->schema([

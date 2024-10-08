@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('summary');
             $table->text('body');
             $table->timestamp('published_at');
+            $table->boolean('is_featured')->default(true);
             $table->timestamps();
         });
     }

@@ -79,7 +79,7 @@ class WhitepaperResource extends Resource
                 ])->collapsible(),              
                 Section::make('Cover Image')
                 ->schema([  
-                    FileUpload::make('cover')->image()->preserveFilenames()->required()->directory('uploads/whitepapers/covers')            
+                    FileUpload::make('cover')->image()->imageEditor()->preserveFilenames()->required()->directory('uploads/whitepapers/covers')            
                 ])
                 ->collapsible(),
                 Section::make('Meta')

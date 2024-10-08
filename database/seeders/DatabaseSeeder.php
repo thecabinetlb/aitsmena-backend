@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             PublicationTypeSeeder::class,
             IndustrySeeder::class,
             BlogPost::class,
+            GraduateProgramSeeder::class,
         ]);
 
         // \App\Models\User::factory()->create([

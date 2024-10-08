@@ -101,7 +101,7 @@ class SuccessStoryResource extends Resource
                 ])->collapsible(),                
                 Section::make('Cover Image')
                 ->schema([
-                    FileUpload::make('cover')->image()->preserveFilenames()->required()->directory('uploads/success-storie/covers')            
+                    FileUpload::make('cover')->image()->imageEditor()->preserveFilenames()->required()->directory('uploads/success-storie/covers')            
                 ])->collapsible(),
                 Section::make('Meta')
                 ->schema([
