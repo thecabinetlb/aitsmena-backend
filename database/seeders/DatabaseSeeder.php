@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\BlogPost;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,7 +16,9 @@ class DatabaseSeeder extends Seeder
     {
 
         $this->call([
-        //
+            PublicationTypeSeeder::class,
+            IndustrySeeder::class,
+            BlogPost::class,
         ]);
 
         // \App\Models\User::factory()->create([

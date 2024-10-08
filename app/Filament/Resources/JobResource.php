@@ -71,7 +71,7 @@ class JobResource extends Resource
             ])
             ->required()
             ->columnSpanFull(),
-            DateTimePicker::make('published_at')
+            DateTimePicker::make('published_at')->label('Published At')
             ->default(now())
             ->columnSpanFull(),            
             Toggle::make('is_featured')->label('Is Featured')->inline(),
@@ -88,7 +88,7 @@ class JobResource extends Resource
             TextColumn::make('location')->sortable()->searchable(),
             TextColumn::make('type')->badge()->sortable()->searchable(),
             ToggleColumn::make('is_featured')->label('Featured'),
-            TextColumn::make('published_at')
+            TextColumn::make('published_at')->label('Published At')
             ->dateTime('M-d-Y')
             ->sortable()
             ->searchable(),

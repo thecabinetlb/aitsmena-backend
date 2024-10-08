@@ -61,7 +61,7 @@ class WhitepaperResource extends Resource
                 ->minLength(10)
                 ->maxLength(300)
                 ->required()->columnSpanFull(),
-                DateTimePicker::make('published_at')
+                DateTimePicker::make('published_at')->label('Published At')
                 ->default(now())->columnSpanFull(),
                 Toggle::make('is_featured')->label('Is Featured')->inline(),
                 Toggle::make('is_arabic')->label('Is Arabic')->inline(),
@@ -113,7 +113,7 @@ class WhitepaperResource extends Resource
                 ToggleColumn::make('is_featured')->label('Featured'),
                 ToggleColumn::make('is_arabic')->label('In Arabic'),
                 ToggleColumn::make('is_gated')->label('Gated'),
-                TextColumn::make('published_at')
+                TextColumn::make('published_at')->label('Published At')
                 ->dateTime('M-d-Y')
                 ->sortable()
                 ->searchable(),

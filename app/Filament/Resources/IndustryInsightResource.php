@@ -82,7 +82,7 @@ class IndustryInsightResource extends Resource
             ->fileAttachmentsDirectory('uploads/industry-insights/images')
             ->required()
             ->columnSpanFull(),
-            DateTimePicker::make('published_at')
+            DateTimePicker::make('published_at')->label('Published At')
             ->default(now())
             ->columnSpanFull(),            
             Toggle::make('is_featured')->label('Is Featured')->inline(),
@@ -125,7 +125,7 @@ class IndustryInsightResource extends Resource
                 ->sortable()->searchable(),                
                 ToggleColumn::make('is_featured')->label('Featured'),
                 ToggleColumn::make('is_arabic')->label('In Arabic'),
-                TextColumn::make('published_at')
+                TextColumn::make('published_at')->label('Published At')
                 ->dateTime('M-d-Y')
                 ->sortable()
                 ->searchable(),
