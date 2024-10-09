@@ -5,7 +5,6 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\IndustryResource\Pages;
 use App\Models\Industry;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -18,6 +17,7 @@ use Filament\Tables\Table;
 use Illuminate\Support\Str;
 
 use Filament\Tables\Columns\TextColumn;
+use FilamentTiptapEditor\TiptapEditor;
 
 class IndustryResource extends Resource
 {
@@ -44,23 +44,8 @@ class IndustryResource extends Resource
             }),
             TextInput::make('slug')->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(150),
             FileUpload::make('icon')->image()->preserveFilenames()->directory('industry/icons')->required()->columnSpanFull(),
-            RichEditor::make('body')
-            ->toolbarButtons([
-                'attachFiles',
-                'blockquote',
-                'bold',
-                'bulletList',
-                'codeBlock',
-                'h2',
-                'h3',
-                'italic',
-                'link',
-                'orderedList',
-                'redo',
-                'strike',
-                'underline',
-                'undo','textColor'
-            ])
+            TiptapEditor::make('body')
+            ->profile('default')   
             ->required()
             ->columnSpanFull(),
             ])->columnSpan(2)->columns(2)

@@ -7,7 +7,7 @@ use App\Filament\Resources\JobResource\RelationManagers;
 use App\Models\Job;
 use Filament\Forms;
 use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\RichEditor;
+use FilamentTiptapEditor\TiptapEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -52,23 +52,8 @@ class JobResource extends Resource
             ->maxLength(300)
             ->required()
             ->columnSpanFull(),
-            RichEditor::make('body')
-            ->toolbarButtons([
-                'attachFiles',
-                'blockquote',
-                'bold',
-                'bulletList',
-                'codeBlock',
-                'h2',
-                'h3',
-                'italic',
-                'link',
-                'orderedList',
-                'redo',
-                'strike',
-                'underline',
-                'undo','textColor'
-            ])
+            TiptapEditor::make('body')
+            ->profile('default')   
             ->required()
             ->columnSpanFull(),
             DateTimePicker::make('published_at')->label('Published At')

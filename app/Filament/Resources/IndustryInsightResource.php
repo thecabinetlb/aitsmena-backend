@@ -25,6 +25,8 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Illuminate\Support\Str;
 
+use FilamentTiptapEditor\TiptapEditor;
+
 class IndustryInsightResource extends Resource
 {
     protected static ?string $model = IndustryInsight::class;
@@ -62,24 +64,8 @@ class IndustryInsightResource extends Resource
             ->maxLength(300)
             ->required()
             ->columnSpanFull(),
-            RichEditor::make('body')
-            ->toolbarButtons([
-                'attachFiles',
-                'blockquote',
-                'bold',
-                'bulletList',
-                'codeBlock',
-                'h2',
-                'h3',
-                'italic',
-                'link',
-                'orderedList',
-                'redo',
-                'strike',
-                'underline',
-                'undo','textColor'
-            ])
-            ->fileAttachmentsDirectory('uploads/industry-insights/images')
+            TiptapEditor::make('body')
+            ->profile('default')   
             ->required()
             ->columnSpanFull(),
             DateTimePicker::make('published_at')->label('Published At')

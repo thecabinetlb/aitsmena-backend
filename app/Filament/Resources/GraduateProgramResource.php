@@ -8,7 +8,6 @@ use App\Models\GraduateProgram;
 use Filament\Forms;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Group;
-use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -22,6 +21,8 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
+
+use FilamentTiptapEditor\TiptapEditor;
 
 class GraduateProgramResource extends Resource
 {
@@ -53,23 +54,8 @@ class GraduateProgramResource extends Resource
             ->maxLength(300)
             ->required()
             ->columnSpanFull(),
-            RichEditor::make('body')
-            ->toolbarButtons([
-                'attachFiles',
-                'blockquote',
-                'bold',
-                'bulletList',
-                'codeBlock',
-                'h2',
-                'h3',
-                'italic',
-                'link',
-                'orderedList',
-                'redo',
-                'strike',
-                'underline',
-                'undo','textColor'
-            ])
+            TiptapEditor::make('body')
+            ->profile('default')   
             ->required()
             ->columnSpanFull(),
             DateTimePicker::make('published_at')->label('Published At')

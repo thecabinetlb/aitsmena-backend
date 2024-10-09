@@ -16,7 +16,6 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TagsInput;
-use Filament\Forms\Components\RichEditor;
 
 use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Columns\ImageColumn;
@@ -28,6 +27,8 @@ use Filament\Forms\Components\Group;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\Layout\Split;
 use Filament\Tables\Columns\Layout\Stack;
+
+use FilamentTiptapEditor\TiptapEditor;
 
 class BlogPostResource extends Resource
 {
@@ -66,25 +67,8 @@ class BlogPostResource extends Resource
             ->maxLength(300)
             ->required()
             ->columnSpanFull(),
-            RichEditor::make('body')
-            ->toolbarButtons([
-                'attachFiles',
-                'blockquote',
-                'bold',
-                'bulletList',
-                'codeBlock',
-                'h2',
-                'h3',
-                'italic',
-                'link',
-                'orderedList',
-                'redo',
-                'strike',
-                'underline',
-                'undo',    
-                'textColor'
-            ])
-            ->fileAttachmentsDirectory('uploads/blog/images')
+            TiptapEditor::make('body')
+            ->profile('default')   
             ->required()
             ->columnSpanFull(),
             DateTimePicker::make('published_at')->label('Published At')
