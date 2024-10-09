@@ -15,7 +15,7 @@ class PublicationTypeSeeder extends Seeder
     public function run(): void
     {
         $types = [
-            [ 'id' => 1, 'title' => 'Blogposts', 'slug' => 'blog'],
+            [ 'id' => 1, 'title' => 'Blog Posts', 'slug' => 'blog'],
             [ 'id' => 2, 'title' => 'Industry Insights', 'slug' => 'industry-insights'],
             [ 'id' => 3, 'title' => 'Whitepapers', 'slug' => 'whitepapers'],
             [ 'id' => 4, 'title' => 'Success Stories', 'slug' => 'success-stories'],

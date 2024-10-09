@@ -10,7 +10,7 @@ class PressReleaseController extends Controller
 {
     public function index()
     {
-        return PressRelease::all();
+        return PressRelease::with(['industry', 'publicationtype'])->get();
     }
 
     public function getBySlug($slug)

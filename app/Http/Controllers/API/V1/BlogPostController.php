@@ -10,7 +10,7 @@ class BlogPostController extends Controller
 {
     public function index()
     {
-        return BlogPost::all();
+        return BlogPost::with(['industry', 'publicationtype'])->get();
     }
 
     public function getBySlug($slug)

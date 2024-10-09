@@ -12,7 +12,7 @@ class WhitepaperController extends Controller
 {
     public function index()
     {
-        return Whitepaper::all();
+        return Whitepaper::with(['industry', 'publicationtype'])->get();
     }
 
     public function getBySlug(Whitepaper $whitepaper)

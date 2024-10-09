@@ -13,7 +13,7 @@ class IndustryInsightController extends Controller
 {
     public function index()
     {
-        return IndustryInsight::all();
+        return IndustryInsight::with(['industry', 'publicationtype'])->get();
     }
 
     public function getBySlug($slug)

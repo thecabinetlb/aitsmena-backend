@@ -15,7 +15,7 @@ class Whitepaper extends Model
         'slug',
         'summary',
         'tags',
-        'image',
+        'cover',
         'published_at',
         'is_featured',
         'is_arabic',
@@ -31,7 +31,7 @@ class Whitepaper extends Model
 
     public function publicationtype()
     {
-        return $this->belongsTo(PublicationType::class);
+        return $this->belongsTo(PublicationType::class, 'publication_type_id');;
     }
 
     public function industry()

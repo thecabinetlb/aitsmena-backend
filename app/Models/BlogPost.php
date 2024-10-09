@@ -16,7 +16,7 @@ class BlogPost extends Model
         'slug',
         'summary',
         'tags',
-        'image',
+        'cover',
         'body',
         'published_at',
         'is_featured',
@@ -32,7 +32,7 @@ class BlogPost extends Model
 
     public function publicationtype()
     {
-        return $this->belongsTo(PublicationType::class);
+        return $this->belongsTo(PublicationType::class, 'publication_type_id');;
     }
 
     public function industry()

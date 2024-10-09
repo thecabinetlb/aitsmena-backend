@@ -12,7 +12,7 @@ class SuccessStoryController extends Controller
 {
     public function index()
     {
-        return SuccessStory::all();
+        return SuccessStory::with(['industry', 'publicationtype'])->get();
     }
 
     public function getBySlug(SuccessStory $successstory)
