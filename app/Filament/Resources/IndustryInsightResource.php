@@ -77,7 +77,7 @@ class IndustryInsightResource extends Resource
                 'redo',
                 'strike',
                 'underline',
-                'undo',
+                'undo','textColor'
             ])
             ->fileAttachmentsDirectory('uploads/industry-insights/images')
             ->required()

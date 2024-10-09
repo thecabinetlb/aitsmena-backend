@@ -67,7 +67,7 @@ class JobResource extends Resource
                 'redo',
                 'strike',
                 'underline',
-                'undo',
+                'undo','textColor'
             ])
             ->required()
             ->columnSpanFull(),

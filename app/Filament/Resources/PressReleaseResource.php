@@ -79,7 +79,7 @@ class PressReleaseResource extends Resource
                 'redo',
                 'strike',
                 'underline',
-                'undo',
+                'undo','textColor'
             ])
             ->fileAttachmentsDirectory('uploads/press-release/images')
             ->required()

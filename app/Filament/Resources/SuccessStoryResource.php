@@ -77,7 +77,7 @@ class SuccessStoryResource extends Resource
                 'redo',
                 'strike',
                 'underline',
-                'undo',
+                'undo','textColor'
             ])
             ->fileAttachmentsDirectory('uploads/success-stories/images')
             ->required()

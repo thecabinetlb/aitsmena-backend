@@ -63,11 +63,4 @@ class Whitepaper extends Model
     {
         return $query->where('is_gated', false);
     }
-
-    public function getReadingTime()
-    {
-        $mins = round(str_word_count($this->body) / 250);
-
-        return ($mins < 1) ? 1 : $mins;
-    }
 }

@@ -58,17 +58,4 @@ class PressRelease extends Model
     {
         $query->where('title', 'like', "%{$search}%");
     }
-
-    public function getReadingTime()
-    {
-        $mins = round(str_word_count($this->body) / 250);
-
-        return ($mins < 1) ? 1 : $mins;
-    }
-    public function getThumbnailUrl()
-    {
-        $isUrl = str_contains($this->image, 'http');
-
-        return ($isUrl) ? $this->image : Storage::disk('public')->Storage::url($this->image);
-    }
 }

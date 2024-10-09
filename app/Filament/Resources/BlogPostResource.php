@@ -81,7 +81,8 @@ class BlogPostResource extends Resource
                 'redo',
                 'strike',
                 'underline',
-                'undo',
+                'undo',    
+                'textColor'
             ])
             ->fileAttachmentsDirectory('uploads/blog/images')
             ->required()
@@ -97,7 +98,9 @@ class BlogPostResource extends Resource
             ->schema([
                 Section::make('Cover Image')
                 ->schema([
-                    FileUpload::make('cover')->image()->imageEditor()->preserveFilenames()->required()->directory('uploads/blog/covers')            
+                    FileUpload::make('cover')->image()->imageEditor()->preserveFilenames()->required()->directory('uploads/blog/covers')
+                    ->disk('public'),
+
                 ])->collapsible(),
                 Section::make('Meta')
                 ->schema([

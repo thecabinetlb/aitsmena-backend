@@ -59,7 +59,7 @@ class IndustryResource extends Resource
                 'redo',
                 'strike',
                 'underline',
-                'undo',
+                'undo','textColor'
             ])
             ->required()
             ->columnSpanFull(),
