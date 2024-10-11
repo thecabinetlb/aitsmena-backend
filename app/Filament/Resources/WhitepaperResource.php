@@ -75,11 +75,14 @@ class WhitepaperResource extends Resource
             ->schema([    
                 Section::make('Attachment')
                 ->schema([        
-                    FileUpload::make('attachment')->preserveFilenames()->required()->directory('uploads/whitepapers/attachments')->columnSpanFull(),               
+                    FileUpload::make('attachment')->preserveFilenames()->required()->directory('uploads/whitepapers/attachments')
+                    ->disk('public')
+                    ->columnSpanFull(),               
                 ])->collapsible(),              
                 Section::make('Cover Image')
                 ->schema([  
-                    FileUpload::make('cover')->image()->imageEditor()->preserveFilenames()->required()->directory('uploads/whitepapers/covers')            
+                    FileUpload::make('cover')->image()->imageEditor()->preserveFilenames()->required()->directory('uploads/whitepapers/covers')
+                    ->disk('public'),
                 ])
                 ->collapsible(),
                 Section::make('Meta')

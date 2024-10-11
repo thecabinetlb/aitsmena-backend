@@ -38,7 +38,7 @@ return [
             'transport' => 'smtp',
             'url' => env('MAIL_URL'),
             'name' => env('MAIL_FROM_NAME', 'AITSMENA'),
-            'host' => env('MAIL_HOST', 'smtp-mail.outlook.com'),
+            'host' => env('MAIL_HOST', 'smtp.gmail.com'),
             'port' => env('MAIL_PORT', 587),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => env('MAIL_USERNAME'),
@@ -109,7 +109,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'marketing@aitsmena.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'aitsmena.website@gmail.com'),
         'name' => env('MAIL_FROM_NAME', 'AITSMENA'),
     ],
 

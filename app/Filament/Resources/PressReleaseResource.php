@@ -80,6 +80,7 @@ class PressReleaseResource extends Resource
                 Section::make('Cover Image')
                 ->schema([
                     FileUpload::make('cover')->image()->imageEditor()->preserveFilenames()->required()->directory('uploads/press-release/covers')            
+                    ->disk('public'),
                 ])->collapsible(),
                 Section::make('Meta')
                 ->schema([

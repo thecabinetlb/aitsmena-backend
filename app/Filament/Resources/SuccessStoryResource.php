@@ -80,11 +80,13 @@ class SuccessStoryResource extends Resource
                     TextInput::make('customer_name')
                     ->required()
                     ->maxLength(255),                       
-                    FileUpload::make('customer_logo')->image()->preserveFilenames()->directory('uploads/success-stories/logos'),
+                    FileUpload::make('customer_logo')->image()->preserveFilenames()->directory('uploads/success-stories/logos')                    
+                    ->disk('public'),
                 ])->collapsible(),                
                 Section::make('Cover Image')
                 ->schema([
-                    FileUpload::make('cover')->image()->imageEditor()->preserveFilenames()->required()->directory('uploads/success-storie/covers')            
+                    FileUpload::make('cover')->image()->imageEditor()->preserveFilenames()->required()->directory('uploads/success-storie/covers')
+                    ->disk('public'),
                 ])->collapsible(),
                 Section::make('Meta')
                 ->schema([

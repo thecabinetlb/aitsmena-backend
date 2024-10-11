@@ -66,8 +66,8 @@ class ContactController extends Controller
 
         try {
  
-            Mail::to('najat.h@cyberg-ae.com')->send(new ContactMessage($contact));
-            return 'Email sent successfully.';
+            Mail::to('info@aitsmena.com')->send(new ContactMessage($contact));
+            return 'Contact Form Email sent successfully.';
         } catch (\Exception $e) {
             return 'Failed to send email: ' . $e->getMessage();
         }

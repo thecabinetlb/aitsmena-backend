@@ -79,7 +79,8 @@ class IndustryInsightResource extends Resource
             ->schema([
                 Section::make('Cover Image')
                 ->schema([
-                    FileUpload::make('cover')->image()->imageEditor()->preserveFilenames()->required()->directory('uploads/industry-insights/covers')            
+                    FileUpload::make('cover')->image()->imageEditor()->preserveFilenames()->required()->directory('uploads/industry-insights/covers')                    
+                    ->disk('public'),
                 ])->collapsible(),
                 Section::make('Meta')
                 ->schema([

@@ -36,7 +36,7 @@ class NewsletterController extends Controller
 
         try {
  
-            Mail::to('najat.h@cyberg-ae.com')->send(new NewsletterMessage($newsletter));
+            Mail::to('info@aitsmena.com')->send(new NewsletterMessage($newsletter));
             return 'Newsletter Email sent successfully.';
         } catch (\Exception $e) {
             return 'Failed to send email: ' . $e->getMessage();
