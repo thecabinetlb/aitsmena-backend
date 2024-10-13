@@ -24,7 +24,6 @@ class ContactController extends Controller
             'phone' => 'required|numeric|digits_between:8,15', // Numeric and between 8 and 15 digits
             'country' => 'required',
             'city' => 'required',
-
             'content' => 'required',
         ],
         [
@@ -66,7 +65,7 @@ class ContactController extends Controller
 
         try {
  
-            Mail::to('info@aitsmena.com')->send(new ContactMessage($contact));
+            Mail::to('marketing@aitsmena.com')->send(new ContactMessage($contact));
             return 'Contact Form Email sent successfully.';
         } catch (\Exception $e) {
             return 'Failed to send email: ' . $e->getMessage();
