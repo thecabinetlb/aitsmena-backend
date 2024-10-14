@@ -24,7 +24,8 @@ class NewsletterMessage extends Mailable
     
     public function build()
     {
-        return $this->view('emails.newsletter')
+        return $this->subject('AITSMENA - New Newsletter Subscription')  // Add the subject here
+            ->view('emails.newsletter')
             ->with('contact', $this->newsletter);
     }
 }
