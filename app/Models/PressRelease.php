@@ -36,7 +36,7 @@ class PressRelease extends Model
 
     public function industry()
     {
-        return $this->belongsTo(industry::class);
+        return $this->belongsTo(Industry::class);
     }
 
     public function scopeTimePublished($query)
