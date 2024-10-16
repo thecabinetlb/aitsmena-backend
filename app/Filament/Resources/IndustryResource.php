@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\IndustryResource\Pages;
 use App\Models\Industry;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -45,8 +46,8 @@ class IndustryResource extends Resource
             TextInput::make('slug')->unique(ignoreRecord: true)->required()->minLength(1)->maxLength(150),
             FileUpload::make('icon')->image()->preserveFilenames()->directory('industry/icons')
             ->disk('public')->required()->columnSpanFull(),
-            TiptapEditor::make('body')
-            ->profile('default')   
+            RichEditor::make('body')
+               
             ->required()
             ->columnSpanFull(),
             ])->columnSpan(2)->columns(2)
